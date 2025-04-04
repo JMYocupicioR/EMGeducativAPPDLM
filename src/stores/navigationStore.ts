@@ -1,58 +1,89 @@
 import { create } from 'zustand';
 
+interface Subsection {
+  id: string;
+  title: string;
+  description?: string;
+}
+
 interface Section {
   id: string;
   title: string;
-  subsections?: { id: string; title: string }[];
+  description?: string;
+  subsections?: Subsection[];
 }
 
 interface NavigationStore {
   sections: Section[];
   activeSection: string | null;
+  activeSubsection: string | null;
   setActiveSection: (sectionId: string) => void;
+  setActiveSubsection: (subsectionId: string | null) => void;
 }
 
 export const useNavigationStore = create<NavigationStore>((set) => ({
   sections: [
     {
       id: 'nerve-conduction',
-      title: 'Nerve Conduction Studies',
+      title: 'Estudios de Conducción Nerviosa',
+      description: 'Valores de referencia y técnicas para estudios de conducción nerviosa',
       subsections: [
-        { id: 'upper-limb-motor', title: 'Upper Limb Motor' },
-        { id: 'upper-limb-sensory', title: 'Upper Limb Sensory' },
-        { id: 'lower-limb-motor', title: 'Lower Limb Motor' },
-        { id: 'lower-limb-sensory', title: 'Lower Limb Sensory' },
+        { id: 'upper-limb-motor', title: 'Motor Miembro Superior' },
+        { id: 'upper-limb-sensory', title: 'Sensitivo Miembro Superior' },
+        { id: 'lower-limb-motor', title: 'Motor Miembro Inferior' },
+        { id: 'lower-limb-sensory', title: 'Sensitivo Miembro Inferior' },
       ],
     },
     {
       id: 'emg-techniques',
-      title: 'EMG Techniques',
+      title: 'Técnicas EMG',
+      description: 'Guías detalladas de técnicas electromiográficas',
       subsections: [
-        { id: 'emg-basics', title: 'EMG Basics' },
-        { id: 'spontaneous-activity', title: 'Spontaneous Activity' },
-        { id: 'motor-unit-potentials', title: 'Motor Unit Potentials' },
-        { id: 'interference-pattern', title: 'Interference Pattern' },
+        { id: 'emg-basics', title: 'Fundamentos EMG' },
+        { id: 'spontaneous-activity', title: 'Actividad Espontánea' },
+        { id: 'motor-unit-potentials', title: 'Potenciales de Unidad Motora' },
+        { id: 'interference-pattern', title: 'Patrón de Interferencia' },
       ],
     },
     {
       id: 'special-studies',
-      title: 'Special Studies',
+      title: 'Estudios Especiales',
+      description: 'Técnicas avanzadas y estudios especializados',
       subsections: [
-        { id: 'f-waves', title: 'F-Waves' },
-        { id: 'h-reflex', title: 'H-Reflex' },
-        { id: 'repetitive-stimulation', title: 'Repetitive Stimulation' },
+        { id: 'f-waves', title: 'Ondas F' },
+        { id: 'h-reflex', title: 'Reflejo H' },
+        { id: 'repetitive-stimulation', title: 'Estimulación Repetitiva' },
       ],
     },
     {
       id: 'clinical-cases',
-      title: 'Clinical Cases',
+      title: 'Casos Clínicos',
+      description: 'Casos de estudio y ejemplos prácticos',
       subsections: [
-        { id: 'carpal-tunnel', title: 'Carpal Tunnel Syndrome' },
-        { id: 'radiculopathies', title: 'Radiculopathies' },
-        { id: 'polyneuropathies', title: 'Polyneuropathies' },
+        { id: 'carpal-tunnel', title: 'Síndrome del Túnel Carpiano' },
+        { id: 'radiculopathies', title: 'Radiculopatías' },
+        { id: 'polyneuropathies', title: 'Polineuropatías' },
+      ],
+    },
+    {
+      id: 'reference',
+      title: 'Referencias',
+      description: 'Material de referencia y recursos adicionales',
+      subsections: [
+        { id: 'guidelines', title: 'Guías Internacionales' },
+        { id: 'articles', title: 'Artículos Científicos' },
+        { id: 'books', title: 'Libros Recomendados' },
       ],
     },
   ],
   activeSection: null,
-  setActiveSection: (sectionId) => set({ activeSection: sectionId }),
+  activeSubsection: null,
+  setActiveSection: (sectionId) => 
+    set((state) => ({
+      activeSection: sectionId,
+      // Clear subsection when changing sections
+      activeSubsection: null
+    })),
+  setActiveSubsection: (subsectionId) =>
+    set({ activeSubsection: subsectionId }),
 }));

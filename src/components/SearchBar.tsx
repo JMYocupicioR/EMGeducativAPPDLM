@@ -1,16 +1,18 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 import { useSettingsStore } from '../stores/settingsStore';
+import { useTranslationStore } from '../stores/translationStore';
 
 export function SearchBar() {
   const { isDarkMode } = useSettingsStore();
+  const { t } = useTranslationStore();
 
   return (
     <div className="mt-4 max-w-2xl">
       <div className="relative">
         <input
           type="text"
-          placeholder="Buscar parámetros EMG, técnicas o condiciones..."
+          placeholder={t('search.placeholder')}
           className={`w-full pl-10 pr-4 py-2 border rounded-lg ${
             isDarkMode
               ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400'
