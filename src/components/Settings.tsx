@@ -1,9 +1,11 @@
 import React from 'react';
 import { Moon, Sun, Languages } from 'lucide-react';
 import { useSettingsStore } from '../stores/settingsStore';
+import { useTranslationStore } from '../stores/translationStore';
 
 export function Settings() {
-  const { isDarkMode, language, toggleDarkMode, setLanguage } = useSettingsStore();
+  const { isDarkMode, toggleDarkMode } = useSettingsStore();
+  const { language, setLanguage } = useTranslationStore();
 
   return (
     <div className="flex items-center space-x-4">

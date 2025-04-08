@@ -7,7 +7,7 @@ import { BookOpen, Activity, Brain, Library } from 'lucide-react';
 export function WelcomeScreen() {
   const { isDarkMode } = useSettingsStore();
   const { t } = useTranslationStore();
-  const { setActiveSection, setActiveSubsection } = useNavigationStore();
+  const { navigateTo } = useNavigationStore();
   const textColor = isDarkMode ? 'text-gray-200' : 'text-gray-900';
   const subtextColor = isDarkMode ? 'text-gray-300' : 'text-gray-600';
 
@@ -16,37 +16,25 @@ export function WelcomeScreen() {
       icon: BookOpen,
       title: t('sections.nerve-conduction'),
       description: t('features.nerveConduction'),
-      onClick: () => {
-        setActiveSection('nerve-conduction');
-        setActiveSubsection('upper-limb-motor');
-      }
+      onClick: () => navigateTo('nerve-conduction', 'upper-limb-motor')
     },
     {
       icon: Activity,
       title: t('sections.emg-techniques'),
       description: t('features.emgTechniques'),
-      onClick: () => {
-        setActiveSection('emg-techniques');
-        setActiveSubsection('emg-basics');
-      }
+      onClick: () => navigateTo('emg-techniques', 'emg-basics')
     },
     {
       icon: Brain,
       title: t('sections.clinical-cases'),
       description: t('features.clinicalCases'),
-      onClick: () => {
-        setActiveSection('clinical-cases');
-        setActiveSubsection('carpal-tunnel');
-      }
+      onClick: () => navigateTo('clinical-cases', 'carpal-tunnel')
     },
     {
       icon: Library,
       title: t('sections.reference'),
       description: t('features.references'),
-      onClick: () => {
-        setActiveSection('reference');
-        setActiveSubsection('guidelines');
-      }
+      onClick: () => navigateTo('reference', 'guidelines')
     }
   ];
 

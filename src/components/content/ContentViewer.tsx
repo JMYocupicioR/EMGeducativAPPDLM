@@ -6,6 +6,7 @@ import { EMGTechniques } from './sections/EMGTechniques';
 import { SpecialStudies } from './sections/SpecialStudies';
 import { ClinicalCases } from './sections/ClinicalCases';
 import { Reference } from './sections/Reference';
+import { Pathologies } from './sections/Pathologies';
 import { WelcomeScreen } from './WelcomeScreen';
 
 export function ContentViewer() {
@@ -24,6 +25,8 @@ export function ContentViewer() {
         return <EMGTechniques subsection={activeSubsection} />;
       case 'special-studies':
         return <SpecialStudies subsection={activeSubsection} />;
+      case 'pathologies':
+        return <Pathologies subsection={activeSubsection} />;
       case 'clinical-cases':
         return <ClinicalCases subsection={activeSubsection} />;
       case 'reference':

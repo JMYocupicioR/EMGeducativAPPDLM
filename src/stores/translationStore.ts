@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { useSettingsStore } from './settingsStore';
+import { persist } from 'zustand/middleware';
 
 interface Translations {
   [key: string]: {
@@ -56,6 +56,10 @@ const translations: Translations = {
     es: 'Estudios Especiales',
     en: 'Special Studies'
   },
+  'sections.pathologies': {
+    es: 'Patologías y Criterios Diagnósticos',
+    en: 'Pathologies and Diagnostic Criteria'
+  },
   'sections.clinical-cases': {
     es: 'Casos Clínicos',
     en: 'Clinical Cases'
@@ -108,6 +112,22 @@ const translations: Translations = {
     es: 'Estimulación Repetitiva',
     en: 'Repetitive Stimulation'
   },
+  'subsections.neuropathies': {
+    es: 'Neuropatías',
+    en: 'Neuropathies'
+  },
+  'subsections.myopathies': {
+    es: 'Miopatías',
+    en: 'Myopathies'
+  },
+  'subsections.neuromuscular-junction': {
+    es: 'Unión Neuromuscular',
+    en: 'Neuromuscular Junction'
+  },
+  'subsections.motor-neuron': {
+    es: 'Neurona Motora',
+    en: 'Motor Neuron'
+  },
   'subsections.carpal-tunnel': {
     es: 'Síndrome del Túnel Carpiano',
     en: 'Carpal Tunnel Syndrome'
@@ -136,14 +156,24 @@ const translations: Translations = {
 
 interface TranslationStore {
   translations: Translations;
+  language: 'es' | 'en';
   t: (key: string) => string;
+  setLanguage: (language: 'es' | 'en') => void;
 }
 
-export const useTranslationStore = create<TranslationStore>()((set, get) => ({
-  translations,
-  t: (key: string) => {
-    const language = useSettingsStore.getState().language;
-    const translation = get().translations[key]?.[language];
-    return translation || key;
-  }
-}));
+export const useTranslationStore = create<TranslationStore>()(
+  persist(
+    (set, get) => ({
+      translations,
+      language: 'es',
+      t: (key: string) => {
+        const translation = get().translations[key]?.[get().language];
+        return translation || key;
+      },
+      setLanguage: (language: 'es' | 'en') => set({ language }),
+    }),
+    {
+      name: 'translation-storage',
+    }
+  )
+);

@@ -19,6 +19,7 @@ interface NavigationStore {
   activeSubsection: string | null;
   setActiveSection: (sectionId: string) => void;
   setActiveSubsection: (subsectionId: string | null) => void;
+  navigateTo: (sectionId: string, subsectionId: string) => void;
 }
 
 export const useNavigationStore = create<NavigationStore>((set) => ({
@@ -56,6 +57,17 @@ export const useNavigationStore = create<NavigationStore>((set) => ({
       ],
     },
     {
+      id: 'pathologies',
+      title: 'Patologías y Criterios Diagnósticos',
+      description: 'Criterios diagnósticos y patrones electrodiagnósticos',
+      subsections: [
+        { id: 'neuropathies', title: 'Neuropatías' },
+        { id: 'myopathies', title: 'Miopatías' },
+        { id: 'neuromuscular-junction', title: 'Unión Neuromuscular' },
+        { id: 'motor-neuron', title: 'Neurona Motora' },
+      ],
+    },
+    {
       id: 'clinical-cases',
       title: 'Casos Clínicos',
       description: 'Casos de estudio y ejemplos prácticos',
@@ -78,12 +90,16 @@ export const useNavigationStore = create<NavigationStore>((set) => ({
   ],
   activeSection: null,
   activeSubsection: null,
-  setActiveSection: (sectionId) => 
-    set((state) => ({
+  setActiveSection: (sectionId) => {
+    set({ activeSection: sectionId });
+  },
+  setActiveSubsection: (subsectionId) => {
+    set({ activeSubsection: subsectionId });
+  },
+  navigateTo: (sectionId, subsectionId) => {
+    set({ 
       activeSection: sectionId,
-      // Clear subsection when changing sections
-      activeSubsection: null
-    })),
-  setActiveSubsection: (subsectionId) =>
-    set({ activeSubsection: subsectionId }),
+      activeSubsection: subsectionId
+    });
+  }
 }));

@@ -26,10 +26,10 @@ export function Layout({ children }: LayoutProps) {
           <div className="flex justify-between items-start">
             <div>
               <h1 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                EMG Reference Tool
+                ENMG. DeepLuxMed
               </h1>
               <p className={`mt-2 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Una guía completa para electromiografía y estudios de neuroconducción
+                Una guía completa para electromiografía y estudios de neuroconducción para estudiantes. Por DeepLuxMed
               </p>
             </div>
             <Settings />
