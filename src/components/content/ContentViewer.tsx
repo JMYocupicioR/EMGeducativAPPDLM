@@ -7,6 +7,7 @@ import { SpecialStudies } from './sections/SpecialStudies';
 import { ClinicalCases } from './sections/ClinicalCases';
 import { Reference } from './sections/Reference';
 import { Pathologies } from './sections/Pathologies';
+import { Nerves } from './sections/Nerves';
 import { WelcomeScreen } from './WelcomeScreen';
 
 export function ContentViewer() {
@@ -19,6 +20,8 @@ export function ContentViewer() {
     }
     
     switch (activeSection) {
+      case 'nerves':
+        return <Nerves subsection={activeSubsection} />;
       case 'nerve-conduction':
         return <NerveConduction subsection={activeSubsection} />;
       case 'emg-techniques':

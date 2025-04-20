@@ -40,9 +40,17 @@ const translations: Translations = {
     es: 'Acceso a recursos académicos y guías internacionales actualizadas.',
     en: 'Access to academic resources and updated international guidelines.'
   },
+  'features.nerves': {
+    es: 'Información detallada sobre nervios periféricos, sus valores de referencia y técnicas de estudio.',
+    en: 'Detailed information about peripheral nerves, reference values, and study techniques.'
+  },
   'search.placeholder': {
     es: 'Buscar parámetros EMG, técnicas o condiciones...',
     en: 'Search EMG parameters, techniques or conditions...'
+  },
+  'sections.nerves': {
+    es: 'Nervios',
+    en: 'Nerves'
   },
   'sections.nerve-conduction': {
     es: 'Estudios de Conducción Nerviosa',
@@ -67,6 +75,18 @@ const translations: Translations = {
   'sections.reference': {
     es: 'Referencias',
     en: 'References'
+  },
+  'subsections.upper-limb-nerves': {
+    es: 'Nervios Miembro Superior',
+    en: 'Upper Limb Nerves'
+  },
+  'subsections.lower-limb-nerves': {
+    es: 'Nervios Miembro Inferior',
+    en: 'Lower Limb Nerves'
+  },
+  'subsections.cranial-nerves': {
+    es: 'Nervios Craneales',
+    en: 'Cranial Nerves'
   },
   'subsections.upper-limb-motor': {
     es: 'Motor Miembro Superior',
@@ -151,6 +171,74 @@ const translations: Translations = {
   'subsections.books': {
     es: 'Libros Recomendados',
     en: 'Recommended Books'
+  },
+  'nerves.title': {
+    es: 'Nervios Periféricos y Craneales',
+    en: 'Peripheral and Cranial Nerves'
+  },
+  'nerves.description': {
+    es: 'Información detallada sobre nervios, valores de referencia y técnicas de estudio.',
+    en: 'Detailed information about nerves, reference values, and study techniques.'
+  },
+  'nerves.motorConduction': {
+    es: 'Conducción Motora',
+    en: 'Motor Conduction'
+  },
+  'nerves.sensoryConduction': {
+    es: 'Conducción Sensitiva',
+    en: 'Sensory Conduction'
+  },
+  'nerves.studyTechnique': {
+    es: 'Técnica de Estudio',
+    en: 'Study Technique'
+  },
+  'nerves.patientPositioning': {
+    es: 'Posicionamiento del Paciente',
+    en: 'Patient Positioning'
+  },
+  'nerves.electrodeLocation': {
+    es: 'Ubicación de Electrodos',
+    en: 'Electrode Location'
+  },
+  'nerves.stimulationPoints': {
+    es: 'Puntos de Estimulación',
+    en: 'Stimulation Points'
+  },
+  'nerves.specialConsiderations': {
+    es: 'Consideraciones Especiales',
+    en: 'Special Considerations'
+  },
+  'nerves.adjustmentVariables': {
+    es: 'Variables de Ajuste',
+    en: 'Adjustment Variables'
+  },
+  'nerves.latency': {
+    es: 'Latencia',
+    en: 'Latency'
+  },
+  'nerves.amplitude': {
+    es: 'Amplitud',
+    en: 'Amplitude'
+  },
+  'nerves.conductionVelocity': {
+    es: 'Velocidad de Conducción',
+    en: 'Conduction Velocity'
+  },
+  'nerves.referenceRange': {
+    es: 'Rango de Referencia',
+    en: 'Reference Range'
+  },
+  'nerves.notes': {
+    es: 'Notas',
+    en: 'Notes'
+  },
+  'nerves.fWave': {
+    es: 'Onda F',
+    en: 'F Wave'
+  },
+  'nerves.hReflex': {
+    es: 'Reflejo H',
+    en: 'H Reflex'
   }
 };
 

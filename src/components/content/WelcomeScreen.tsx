@@ -2,7 +2,7 @@ import React from 'react';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslationStore } from '../../stores/translationStore';
 import { useNavigationStore } from '../../stores/navigationStore';
-import { BookOpen, Activity, Brain, Library } from 'lucide-react';
+import { BookOpen, Activity, Brain, Library, Stethoscope } from 'lucide-react';
 
 export function WelcomeScreen() {
   const { isDarkMode } = useSettingsStore();
@@ -12,6 +12,12 @@ export function WelcomeScreen() {
   const subtextColor = isDarkMode ? 'text-gray-300' : 'text-gray-600';
 
   const features = [
+    {
+      icon: Stethoscope,
+      title: t('sections.nerves'),
+      description: t('features.nerves'),
+      onClick: () => navigateTo('nerves', 'upper-limb-nerves')
+    },
     {
       icon: BookOpen,
       title: t('sections.nerve-conduction'),
@@ -58,7 +64,7 @@ export function WelcomeScreen() {
         </ul>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, index) => {
           const Icon = feature.icon;
           return (

@@ -25,6 +25,16 @@ interface NavigationStore {
 export const useNavigationStore = create<NavigationStore>((set) => ({
   sections: [
     {
+      id: 'nerves',
+      title: 'Nervios',
+      description: 'Información detallada sobre nervios periféricos y craneales',
+      subsections: [
+        { id: 'upper-limb-nerves', title: 'Nervios Miembro Superior' },
+        { id: 'lower-limb-nerves', title: 'Nervios Miembro Inferior' },
+        { id: 'cranial-nerves', title: 'Nervios Craneales' },
+      ],
+    },
+    {
       id: 'nerve-conduction',
       title: 'Estudios de Conducción Nerviosa',
       description: 'Valores de referencia y técnicas para estudios de conducción nerviosa',
