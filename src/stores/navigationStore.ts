@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { useTranslationStore } from './translationStore';
 
 interface Subsection {
   id: string;
@@ -19,7 +20,7 @@ interface NavigationStore {
   activeSubsection: string | null;
   setActiveSection: (sectionId: string) => void;
   setActiveSubsection: (subsectionId: string | null) => void;
-  navigateTo: (sectionId: string, subsectionId: string) => void;
+  navigateTo: (section: string, subsection: string | null) => void;
 }
 
 export const useNavigationStore = create<NavigationStore>((set) => ({
@@ -29,31 +30,30 @@ export const useNavigationStore = create<NavigationStore>((set) => ({
       title: 'Nervios',
       description: 'Información detallada sobre nervios periféricos y craneales',
       subsections: [
-        { id: 'upper-limb-nerves', title: 'Nervios Miembro Superior' },
-        { id: 'lower-limb-nerves', title: 'Nervios Miembro Inferior' },
+        { id: 'upper-limb-nerves', title: 'Nervios del Miembro Superior' },
+        { id: 'lower-limb-nerves', title: 'Nervios del Miembro Inferior' },
         { id: 'cranial-nerves', title: 'Nervios Craneales' },
       ],
     },
     {
       id: 'nerve-conduction',
-      title: 'Estudios de Conducción Nerviosa',
+      title: 'Estudios de Neuroconducción',
       description: 'Valores de referencia y técnicas para estudios de conducción nerviosa',
       subsections: [
-        { id: 'upper-limb-motor', title: 'Motor Miembro Superior' },
-        { id: 'upper-limb-sensory', title: 'Sensitivo Miembro Superior' },
-        { id: 'lower-limb-motor', title: 'Motor Miembro Inferior' },
-        { id: 'lower-limb-sensory', title: 'Sensitivo Miembro Inferior' },
+        { id: 'upper-limb-motor', title: 'Estudios Motores de Miembro Superior' },
+        { id: 'upper-limb-sensory', title: 'Estudios Sensitivos de Miembro Superior' },
+        { id: 'lower-limb-motor', title: 'Estudios Motores de Miembro Inferior' },
+        { id: 'lower-limb-sensory', title: 'Estudios Sensitivos de Miembro Inferior' },
       ],
     },
     {
       id: 'emg-techniques',
       title: 'Técnicas EMG',
-      description: 'Guías detalladas de técnicas electromiográficas',
+      description: 'Técnicas de electromiografía e interpretación',
       subsections: [
-        { id: 'emg-basics', title: 'Fundamentos EMG' },
-        { id: 'spontaneous-activity', title: 'Actividad Espontánea' },
-        { id: 'motor-unit-potentials', title: 'Potenciales de Unidad Motora' },
-        { id: 'interference-pattern', title: 'Patrón de Interferencia' },
+        { id: 'emg-basics', title: 'Conceptos Básicos de EMG' },
+        { id: 'needle-placement', title: 'Colocación de Aguja' },
+        { id: 'waveform-analysis', title: 'Análisis de Formas de Onda' },
       ],
     },
     {
@@ -79,12 +79,12 @@ export const useNavigationStore = create<NavigationStore>((set) => ({
     },
     {
       id: 'clinical-cases',
-      title: 'Casos Clínicos',
-      description: 'Casos de estudio y ejemplos prácticos',
+      title: 'Clinical Cases',
+      description: 'Real clinical cases and their interpretation',
       subsections: [
-        { id: 'carpal-tunnel', title: 'Síndrome del Túnel Carpiano' },
-        { id: 'radiculopathies', title: 'Radiculopatías' },
-        { id: 'polyneuropathies', title: 'Polineuropatías' },
+        { id: 'case-studies', title: 'Case Studies' },
+        { id: 'differential-diagnosis', title: 'Differential Diagnosis' },
+        { id: 'treatment-options', title: 'Treatment Options' },
       ],
     },
     {
@@ -106,10 +106,10 @@ export const useNavigationStore = create<NavigationStore>((set) => ({
   setActiveSubsection: (subsectionId) => {
     set({ activeSubsection: subsectionId });
   },
-  navigateTo: (sectionId, subsectionId) => {
+  navigateTo: (section: string, subsection: string | null) => {
     set({ 
-      activeSection: sectionId,
-      activeSubsection: subsectionId
+      activeSection: section,
+      activeSubsection: subsection
     });
   }
 }));

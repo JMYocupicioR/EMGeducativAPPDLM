@@ -1,3 +1,122 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-50: 236 253 245;
+    --primary-100: 209 250 229;
+    --primary-200: 167 243 208;
+    --primary-300: 110 231 183;
+    --primary-400: 52 211 153;
+    --primary-500: 16 185 129;
+    --primary-600: 5 150 105;
+    --primary-700: 4 120 87;
+    --primary-800: 6 95 70;
+    --primary-900: 4 78 56;
+  }
+
+  .dark {
+    --primary-50: 20 83 45;
+    --primary-100: 16 185 129;
+    --primary-200: 5 150 105;
+    --primary-300: 4 120 87;
+    --primary-400: 6 95 70;
+    --primary-500: 4 78 56;
+    --primary-600: 3 63 45;
+    --primary-700: 2 48 34;
+    --primary-800: 1 33 23;
+    --primary-900: 0 18 12;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply antialiased text-gray-900 bg-gray-50 leading-relaxed
+           dark:text-gray-200 dark:bg-gray-900;
+  }
+
+  .theme-transition {
+    @apply transition-colors duration-300;
+  }
+
+  h1 {
+    @apply text-3xl font-bold mb-6 tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold mb-4 tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl font-semibold mb-3 tracking-tight;
+  }
+
+  h4 {
+    @apply text-lg font-medium mb-2;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-gray-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-150
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500
+           active:scale-95;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700
+           dark:bg-primary-500 dark:hover:bg-primary-600;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gray-200 text-gray-900 hover:bg-gray-300
+           dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600;
+  }
+
+  .nav-item {
+    @apply px-4 py-2 rounded-lg transition-colors duration-150 cursor-pointer
+           text-gray-700 hover:bg-gray-100 hover:text-gray-900
+           dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-100;
+  }
+
+  .nav-item-active {
+    @apply bg-primary-50 text-primary-900 font-medium
+           dark:bg-primary-900/50 dark:text-primary-100;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden
+           dark:bg-gray-800 dark:border-gray-700;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-300 
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100
+           dark:placeholder-gray-400;
+  }
+}
+
+/* Smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

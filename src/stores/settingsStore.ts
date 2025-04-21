@@ -18,6 +18,7 @@ export const useSettingsStore = create<SettingsStore>()(
     }),
     {
       name: 'settings-storage',
+      partialize: (state) => ({ isDarkMode: state.isDarkMode, language: state.language }),
     }
   )
 );

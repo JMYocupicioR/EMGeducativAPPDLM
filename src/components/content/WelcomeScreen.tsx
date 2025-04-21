@@ -46,25 +46,25 @@ export function WelcomeScreen() {
 
   return (
     <div>
-      <h2 className={`text-2xl font-bold mb-4 ${textColor}`}>
+      <h2 className={`text-xl md:text-2xl font-bold mb-3 md:mb-4 ${textColor}`}>
         {t('welcome.title')}
       </h2>
-      <p className={`mb-6 ${subtextColor}`}>
+      <p className={`text-sm md:text-base mb-4 md:mb-6 ${subtextColor}`}>
         {t('welcome.description')}
       </p>
       
-      <div className={`${isDarkMode ? 'bg-gray-700' : 'bg-blue-50'} p-4 rounded-lg mb-8`}>
-        <h3 className={`text-lg font-semibold mb-2 ${isDarkMode ? 'text-blue-300' : 'text-blue-700'}`}>
+      <div className={`${isDarkMode ? 'bg-gray-700' : 'bg-blue-50'} p-3 md:p-4 rounded-lg mb-6 md:mb-8`}>
+        <h3 className={`text-base md:text-lg font-semibold mb-2 ${isDarkMode ? 'text-blue-300' : 'text-blue-700'}`}>
           {t('welcome.howToUse')}
         </h3>
-        <ul className={`list-disc list-inside ${subtextColor} space-y-1`}>
+        <ul className={`list-disc list-inside ${subtextColor} space-y-1 text-sm md:text-base`}>
           {t('welcome.instructions').split('\n').map((instruction, index) => (
             <li key={index}>{instruction}</li>
           ))}
         </ul>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {features.map((feature, index) => {
           const Icon = feature.icon;
           return (
@@ -73,15 +73,15 @@ export function WelcomeScreen() {
               onClick={feature.onClick}
               className={`w-full text-left ${
                 isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-gray-100'
-              } p-4 rounded-lg transition-colors`}
+              } p-3 md:p-4 rounded-lg transition-colors`}
             >
-              <div className="flex items-start space-x-3">
-                <Icon className={`w-6 h-6 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
+              <div className="flex items-start space-x-2 md:space-x-3">
+                <Icon className={`w-5 h-5 md:w-6 md:h-6 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
                 <div>
-                  <h3 className={`text-lg font-semibold mb-1 ${textColor}`}>
+                  <h3 className={`text-base md:text-lg font-semibold mb-1 ${textColor}`}>
                     {feature.title}
                   </h3>
-                  <p className={subtextColor}>
+                  <p className={`text-sm md:text-base ${subtextColor}`}>
                     {feature.description}
                   </p>
                 </div>

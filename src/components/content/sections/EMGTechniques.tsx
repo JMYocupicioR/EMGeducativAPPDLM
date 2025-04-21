@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSettingsStore } from '../../../stores/settingsStore';
+import { EMGBasics } from './emg/EMGBasics';
 
 interface EMGTechniquesProps {
   subsection: string | null;
@@ -26,15 +27,37 @@ export function EMGTechniques({ subsection }: EMGTechniquesProps) {
 
   return (
     <div>
-      <h2 className={`text-2xl font-bold mb-4 ${textColor}`}>
-        {subsection === 'emg-basics' && 'Fundamentos EMG'}
-        {subsection === 'spontaneous-activity' && 'Actividad Espontánea'}
-        {subsection === 'motor-unit-potentials' && 'Potenciales de Unidad Motora'}
-        {subsection === 'interference-pattern' && 'Patrón de Interferencia'}
-      </h2>
-      <p className={subtextColor}>
-        Contenido detallado en desarrollo...
-      </p>
+      {subsection === 'emg-basics' && <EMGBasics />}
+      {subsection === 'spontaneous-activity' && (
+        <div>
+          <h2 className={`text-2xl font-bold mb-4 ${textColor}`}>
+            Actividad Espontánea
+          </h2>
+          <p className={subtextColor}>
+            Contenido detallado en desarrollo...
+          </p>
+        </div>
+      )}
+      {subsection === 'motor-unit-potentials' && (
+        <div>
+          <h2 className={`text-2xl font-bold mb-4 ${textColor}`}>
+            Potenciales de Unidad Motora
+          </h2>
+          <p className={subtextColor}>
+            Contenido detallado en desarrollo...
+          </p>
+        </div>
+      )}
+      {subsection === 'interference-pattern' && (
+        <div>
+          <h2 className={`text-2xl font-bold mb-4 ${textColor}`}>
+            Patrón de Interferencia
+          </h2>
+          <p className={subtextColor}>
+            Contenido detallado en desarrollo...
+          </p>
+        </div>
+      )}
     </div>
   );
 }

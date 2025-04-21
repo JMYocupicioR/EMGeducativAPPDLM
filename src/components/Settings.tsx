@@ -30,7 +30,7 @@ export function Settings() {
         title="Cambiar idioma"
       >
         <Languages size={20} />
-        <span className="font-medium">{language.toUpperCase()}</span>
+        <span className="font-medium">{(language || 'es').toUpperCase()}</span>
       </button>
     </div>
   );

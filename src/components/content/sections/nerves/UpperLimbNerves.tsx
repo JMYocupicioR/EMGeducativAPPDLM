@@ -29,14 +29,14 @@ export function UpperLimbNerves() {
               isDarkMode ? 'bg-gray-600 text-gray-200 hover:bg-gray-500' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
             } transition-colors`}
           >
-            ← Volver a la lista
+            {t('nerves.backToList')}
           </button>
           <NerveDetail nerve={selectedNerve} />
         </div>
       ) : (
         <>
           <p className={`mb-6 ${subtextColor}`}>
-            Seleccione un nervio de la lista para ver información detallada sobre valores de referencia, técnicas de estudio y consideraciones especiales.
+            {t('nerves.selectNerveDescription')}
           </p>
           
           <div className="grid md:grid-cols-2 gap-4">
@@ -55,17 +55,17 @@ export function UpperLimbNerves() {
                 <div className="mt-2 flex flex-wrap gap-2">
                   {nerve.motorConduction && (
                     <span className="px-2 py-1 text-xs rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                      Motor
+                      {t('nerves.motor')}
                     </span>
                   )}
                   {nerve.sensoryConduction && (
                     <span className="px-2 py-1 text-xs rounded bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-                      Sensitivo
+                      {t('nerves.sensory')}
                     </span>
                   )}
                   {nerve.motorConduction?.fWave && (
                     <span className="px-2 py-1 text-xs rounded bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
-                      Onda F
+                      {t('nerves.fWave')}
                     </span>
                   )}
                 </div>
