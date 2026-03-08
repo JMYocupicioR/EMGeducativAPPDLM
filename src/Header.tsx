@@ -1,49 +1,66 @@
-import React from 'react';
-import { MobileNavigation } from './components/MobileNavigation';
-import { Settings } from './components/Settings';
-import SearchBar from './components/SearchBar';
-import { useTheme } from './useTheme';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useSettingsStore } from './stores/settingsStore';
+import { BookOpen, Home, Sun, Moon, Globe, Menu } from 'lucide-react';
+import { CourseSidebar } from './components/CourseSidebar';
 
 export function Header() {
-  const { isDarkMode } = useTheme();
-
-  const headerClasses = `sticky top-0 z-30 ${
-    isDarkMode ? 'bg-gray-900/95' : 'bg-white/95'
-  } backdrop-blur-sm border-b ${
-    isDarkMode ? 'border-gray-800' : 'border-gray-200'
-  } shadow-sm`;
+  const { isDarkMode, toggleDarkMode, language, setLanguage } = useSettingsStore();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <header 
-      className={headerClasses} 
-      role="banner"
-      aria-label="Encabezado principal"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <MobileNavigation />
-            <div>
-              <h1 
-                className={`text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}
-                aria-label="ENMG DeepLuxMed - Guía de electromiografía"
-              >
-                ENMG. DeepLuxMed
-              </h1>
-              <p 
-                className={`mt-1 text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}
-                aria-label="Descripción del sitio"
-              >
-                Guía completa para electromiografía y estudios de neuroconducción
-              </p>
-            </div>
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/60 dark:border-slate-800/60">
+        <div className="max-w-7xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Sidebar Toggle */}
+            <button
+              onClick={() => setSidebarOpen(true)}
+              className="p-2 -ml-1 rounded-lg text-slate-500 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all"
+              aria-label="Abrir temario"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
+
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
+              <div className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all">
+                <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
+              </div>
+              <div className="hidden sm:block">
+                <span className="font-bold text-slate-800 dark:text-white text-lg tracking-tight">ENMG</span>
+                <span className="text-slate-400 dark:text-slate-500 text-sm ml-1.5 font-light">DeepLuxMed</span>
+              </div>
+            </Link>
           </div>
-          <Settings />
+
+          <div className="flex items-center gap-1 sm:gap-2">
+            {!isHome && (
+              <Link to="/" className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all">
+                <Home className="w-4 h-4" />
+                <span className="hidden sm:inline">Módulos</span>
+              </Link>
+            )}
+            <button
+              onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all"
+            >
+              <Globe className="w-4 h-4" /> {language === 'es' ? 'ES' : 'EN'}
+            </button>
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 rounded-lg text-slate-500 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all"
+            >
+              {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4" />}
+            </button>
+          </div>
         </div>
-        <div className="mt-4" role="search">
-          <SearchBar />
-        </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Course Sidebar */}
+      <CourseSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+    </>
   );
 }

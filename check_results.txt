@@ -1,0 +1,320 @@
+
+❌ MISMATCH DETECTED
+Expected Title: Establishing high-quality reference values for nerve conduction studies: A report from the normative data task force of the AANEM
+URL: https://doi.org/10.1002/mus.25204
+Page Title: just a moment...
+Match Ratio: 0.07
+
+❌ MISMATCH DETECTED
+Expected Title: Electrodiagnostic reference values for upper and lower limb nerve conduction studies in adult populations
+URL: https://doi.org/10.1002/mus.25203
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Needle electromyography
+URL: https://doi.org/10.1002/mus.21180
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Literature review of the usefulness of repetitive nerve stimulation and single fiber EMG in the electrodiagnostic evaluation of patients with suspected myasthenia gravis or Lambert-Eaton myasthenic syndrome
+URL: https://doi.org/10.1002/mus.1140
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Surface recording of the H-reflex of the flexor carpi radialis
+URL: https://pubmed.ncbi.nlm.nih.gov/7322151/
+Page Title: drug level monitoring: the importance of quality control - pubmed
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: AAEM Minimonograph #13: H reflexes and F waves: physiology and clinical indications
+URL: https://pubmed.ncbi.nlm.nih.gov/1630438/
+Page Title: [experimental study of bacterial adherence to biliary tract in rabbits] - pubmed
+Match Ratio: 0.29
+
+❌ MISMATCH DETECTED
+Expected Title: Standardization of H reflex and diagnostic use in S1 radiculopathy
+URL: https://pubmed.ncbi.nlm.nih.gov/4817684/
+Page Title: orthoses in patients with brachial plexus injuries - pubmed
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Physiologic basis of potentials recorded in electromyography
+URL: https://pubmed.ncbi.nlm.nih.gov/11054744/
+Page Title: functional and clinical significance of skeletal muscle architecture - pubmed
+Match Ratio: 0.40
+
+❌ MISMATCH DETECTED
+Expected Title: Quantitative motor unit potential analysis
+URL: https://pubmed.ncbi.nlm.nih.gov/8714345/
+Page Title: magnetic coil suppression of extrafoveal visual perception using disappearance targets - pubmed
+Match Ratio: 0.20
+
+❌ MISMATCH DETECTED
+Expected Title: Central loop of the H reflex. Normal values and use in S1 radiculopathy
+URL: https://pubmed.ncbi.nlm.nih.gov/9207705/
+Page Title: effective physical therapy for chronic obstructive pulmonary disease. pilot study of exercise in hot
+Match Ratio: 0.17
+
+❌ MISMATCH DETECTED
+Expected Title: Lambert-Eaton myasthenic syndrome
+URL: https://pubmed.ncbi.nlm.nih.gov/2823684/
+Page Title: effects of 4&#x27;-o-tetrahydropyranyl-doxorubicin on isolated perfused rat heart and cardiac mitoch
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: AAEM Minimonograph #33: Electrodiagnostic Approach to Defects of Neuromuscular Transmission
+URL: https://pubmed.ncbi.nlm.nih.gov/2549629/
+Page Title: [surgical therapy of liver and bile duct tumors] - pubmed
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: AAEM minimonograph #48: autonomic nervous system testing
+URL: https://pubmed.ncbi.nlm.nih.gov/9236783/
+Page Title: firing rate of the lower motoneuron and contractile properties of its muscle fibers after upper moto
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Utility of somatosensory evoked potentials in chronic acquired demyelinating neuropathy
+URL: https://pubmed.ncbi.nlm.nih.gov/18785187/
+Page Title: decreased muscle atrophy f-box (mafbx) expression in regenerating muscle after muscle-damaging exerc
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Diagnostic utility of somatosensory evoked potentials in chronic polyradiculopathy without electrodiagnostic signs of peripheral demyelination
+URL: https://pubmed.ncbi.nlm.nih.gov/26573692/
+Page Title: karyotype differentiation in 19 species of river loach fishes (nemacheilidae, teleostei): extensive 
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Motor unit number index (MUNIX): principle, method, and findings in healthy subjects and in patients with motor neuron disease
+URL: https://doi.org/10.1002/mus.21824
+Page Title: just a moment...
+Match Ratio: 0.07
+
+❌ MISMATCH DETECTED
+Expected Title: Ultrasound-guided needle EMG of the diaphragm: technique description and case report
+URL: https://doi.org/10.1002/mus.21187
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Reference values for jitter recorded by concentric needle electrodes in healthy controls: a multicenter study
+URL: https://pubmed.ncbi.nlm.nih.gov/26789908/
+Page Title: p/q- and n-type calcium-channel antibodies: oncological, neurological, and serological accompaniment
+Match Ratio: 0.36
+
+❌ MISMATCH DETECTED
+Expected Title: Distal symmetric polyneuropathy: a definition for clinical research
+URL: https://pubmed.ncbi.nlm.nih.gov/15668413/
+Page Title: training, competency, and credentialing standards for diagnostic cervicocerebral angiography, caroti
+Match Ratio: 0.17
+
+❌ MISMATCH DETECTED
+Expected Title: Electrophysiological classification of Guillain-Barré syndrome: Clinical associations and outcome
+URL: https://doi.org/10.1002/ana.410440512
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: EAN/PNS guideline on diagnosis and treatment of chronic inflammatory demyelinating polyradiculoneuropathy: Second revision
+URL: https://doi.org/10.1111/ene.14959
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Guillain-Barré syndrome in northern China. Relationship to Campylobacter jejuni infection and anti-glycolipid antibodies
+URL: https://doi.org/10.1093/brain/118.3.597
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: AAEM minimonograph #26: the electrodiagnosis of carpal tunnel syndrome
+URL: https://pubmed.ncbi.nlm.nih.gov/9371294/
+Page Title: multiple myeloma and other differentiated b-cell disorders - pubmed
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: AAEM minimonograph no. 34: polyneuropathy: classification by nerve conduction studies and electromyography
+URL: https://pubmed.ncbi.nlm.nih.gov/2172261/
+Page Title: differential phosphorylation of the gap junction protein connexin43 in junctional communication-comp
+Match Ratio: 0.13
+
+❌ MISMATCH DETECTED
+Expected Title: AAEE minimonograph no. 31: the electrodiagnosis of ulnar neuropathy at the elbow
+URL: https://pubmed.ncbi.nlm.nih.gov/3185600/
+Page Title: muscular dystrophy in a litter of golden retriever dogs - pubmed
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Assessment of current diagnostic criteria for Guillain-Barré syndrome
+URL: https://pubmed.ncbi.nlm.nih.gov/2360532/
+Page Title: partial resistance to anticoagulation after streptokinase treatment for acute myocardial infarction 
+Match Ratio: 0.17
+
+❌ MISMATCH DETECTED
+Expected Title: Pathophysiology inferred from electrodiagnostic nerve tests and classification of polyneuropathies. Suggested guidelines
+URL: https://pubmed.ncbi.nlm.nih.gov/15953562/
+Page Title: long-term exacerbation by interleukin 13 of ige-mediated eosinophilia in rats - pubmed
+Match Ratio: 0.10
+
+❌ MISMATCH DETECTED
+Expected Title: Practice parameter for electrodiagnostic studies in carpal tunnel syndrome: summary statement
+URL: https://pubmed.ncbi.nlm.nih.gov/12115971/
+Page Title: severe sensory ataxia and demyelinating polyneuropathy with igm anti-gm2 and galnac-gd1a antibodies 
+Match Ratio: 0.44
+
+❌ MISMATCH DETECTED
+Expected Title: Distal symmetric polyneuropathy: a review
+URL: https://pubmed.ncbi.nlm.nih.gov/26647260/
+Page Title: training physicians to provide high-value, cost-conscious care: a systematic review - pubmed
+Match Ratio: 0.25
+
+❌ MISMATCH DETECTED
+Expected Title: Gold Coast diagnostic criteria: implications for ALS diagnosis and clinical trial enrollment
+URL: https://doi.org/10.1002/mus.27392
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Short segment incremental studies in the evaluation of ulnar neuropathy at the elbow
+URL: https://pubmed.ncbi.nlm.nih.gov/1565108/
+Page Title: [urinary n-methylhistamine excretion. following exogenous histamine administration and allergy/exerc
+Match Ratio: 0.13
+
+❌ MISMATCH DETECTED
+Expected Title: Electrodiagnostic criteria for diagnosis of ALS (Awaji criteria)
+URL: https://pubmed.ncbi.nlm.nih.gov/18024166/
+Page Title: bi-level positive pressure ventilation and adaptive servo ventilation in patients with heart failure
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: El Escorial world federation of neurology criteria for the diagnosis of amyotrophic lateral sclerosis
+URL: https://pubmed.ncbi.nlm.nih.gov/7876084/
+Page Title: cytochrome p-450tyr is a multifunctional heme-thiolate enzyme catalyzing the conversion of l-tyrosin
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Polymyositis, dermatomyositis, and inclusion-body myositis
+URL: https://doi.org/10.1056/NEJM199111213252106
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: AANEM monograph: Evaluation of persons with suspected lumbosacral and cervical radiculopathy (Part 1)
+URL: https://pubmed.ncbi.nlm.nih.gov/33278864/
+Page Title: dna methylation subtypes for ovarian cancer prognosis - pubmed
+Match Ratio: 0.30
+
+❌ MISMATCH DETECTED
+Expected Title: Evaluation and treatment of inflammatory myopathies
+URL: https://doi.org/10.1136/jnnp.2008.169375
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Repetitive nerve stimulation and single fiber EMG in myasthenia gravis or Lambert-Eaton syndrome
+URL: https://doi.org/10.1002/mus.1140
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Lumbosacral plexus neuropathy
+URL: https://pubmed.ncbi.nlm.nih.gov/7198735/
+Page Title: acute optic neuritis and multiple sclerosis - pubmed
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Electrodiagnostic approach to the patient with suspected radiculopathy
+URL: https://pubmed.ncbi.nlm.nih.gov/12152440/
+Page Title: needle electromyography. fundamentals, normal and abnormal patterns - pubmed
+Match Ratio: 0.33
+
+❌ MISMATCH DETECTED
+Expected Title: Utility of electrodiagnostic testing in evaluating patients with lumbosacral radiculopathy: an evidence-based review
+URL: https://pubmed.ncbi.nlm.nih.gov/20082409/
+Page Title: assessing quality of diabetes care and its variation in aboriginal community health centres in austr
+Match Ratio: 0.30
+
+❌ MISMATCH DETECTED
+Expected Title: AAEE Minimonograph #32: The electrophysiologic examination in patients with radiculopathies
+URL: https://pubmed.ncbi.nlm.nih.gov/3070515/
+Page Title: immunocytochemical studies on the pituitary gland and spontaneous pituitary tumors of sprague-dawley
+Match Ratio: 0.14
+
+❌ MISMATCH DETECTED
+Expected Title: Lesion distribution among 281 patients with sporadic neuralgic amyotrophy
+URL: https://pubmed.ncbi.nlm.nih.gov/27463779/
+Page Title: self-assembly of carbon nanotubes in polymer melts: simulation of structural and electrical behaviou
+Match Ratio: 0.13
+
+❌ MISMATCH DETECTED
+Expected Title: Microvasculitis and ischemia in diabetic lumbosacral radiculoplexus neuropathy
+URL: https://pubmed.ncbi.nlm.nih.gov/10601476/
+Page Title: differential inhibition of glial k(+) currents by 4-ap - pubmed
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Lambert-Eaton myasthenic syndrome
+URL: https://pubmed.ncbi.nlm.nih.gov/2823684/
+Page Title: effects of 4&#x27;-o-tetrahydropyranyl-doxorubicin on isolated perfused rat heart and cardiac mitoch
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Reference values for jitter recorded by concentric needle electrodes in healthy controls
+URL: https://pubmed.ncbi.nlm.nih.gov/26789908/
+Page Title: p/q- and n-type calcium-channel antibodies: oncological, neurological, and serological accompaniment
+Match Ratio: 0.44
+
+❌ MISMATCH DETECTED
+Expected Title: Quality in Electrodiagnostic Studies: A Guide for Referring Physicians
+URL: https://pubmed.ncbi.nlm.nih.gov/31527948/
+Page Title: pmid 31527948 is not available - pubmed
+Match Ratio: 0.17
+
+❌ MISMATCH DETECTED
+Expected Title: Establishing high quality reference values for nerve conduction studies (AANEM Normative Data Task Force)
+URL: https://doi.org/10.1002/mus.25204
+Page Title: just a moment...
+Match Ratio: 0.08
+
+❌ MISMATCH DETECTED
+Expected Title: Electrodiagnostic reference values for upper and lower limb nerve conduction studies in adult populations
+URL: https://doi.org/10.1002/mus.25203
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: The risk of iatrogenic pneumothorax after electromyography
+URL: https://pubmed.ncbi.nlm.nih.gov/26930438/
+Page Title: comment on expression of concern: c-kit is essential for alveolar maintenance and protection from em
+Match Ratio: 0.20
+
+❌ MISMATCH DETECTED
+Expected Title: Iatrogenic complications and risks of nerve conduction studies and needle electromyography
+URL: https://pubmed.ncbi.nlm.nih.gov/12766976/
+Page Title: skeletal muscle disorders associated with selenium deficiency in humans - pubmed
+Match Ratio: 0.25
+
+❌ MISMATCH DETECTED
+Expected Title: Safety of nerve conduction studies in patients with implanted cardiac devices
+URL: https://doi.org/10.1002/mus.20690
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Safety and pain in electrodiagnostic studies
+URL: https://doi.org/10.1002/mus.25421
+Page Title: just a moment...
+Match Ratio: 0.00
+
+❌ MISMATCH DETECTED
+Expected Title: Hematoma risk after needle electromyography
+URL: https://doi.org/10.1002/mus.22227
+Page Title: just a moment...
+Match Ratio: 0.00
+
+Done checking links.

@@ -1,25 +1,33 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ErrorBoundary } from 'react-error-boundary';
-import { Layout } from './components/Layout';
-import { MainContent } from './components/MainContent';
-import { ErrorFallback } from './components/ErrorFallback';
+import { Suspense, lazy } from 'react';
+import { useSettingsStore } from './stores/settingsStore';
+import { Header } from './Header';
 import { LoadingSpinner } from './components/LoadingSpinner';
 
+const LandingPage = lazy(() => import('./components/pages/LandingPage'));
+const ModulePage = lazy(() => import('./components/pages/ModulePage'));
+const TopicPage = lazy(() => import('./components/pages/TopicPage'));
+const PlexoCalculatorPage = lazy(() => import('./components/Plexo/PlexoCalculatorPage'));
+
 function App() {
+  const { isDarkMode } = useSettingsStore();
+
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <React.Suspense fallback={<LoadingSpinner />}>
+    <div className={isDarkMode ? 'dark' : ''}>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
         <Router>
-          <Layout>
+          <Header />
+          <Suspense fallback={<LoadingSpinner />}>
             <Routes>
-              <Route path="/" element={<MainContent />} />
-              {/* Agregar más rutas aquí según sea necesario */}
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/herramientas/plexo-braquial" element={<PlexoCalculatorPage />} />
+              <Route path="/modulo/:moduleId" element={<ModulePage />} />
+              <Route path="/modulo/:moduleId/*" element={<TopicPage />} />
             </Routes>
-          </Layout>
+          </Suspense>
         </Router>
-      </React.Suspense>
-    </ErrorBoundary>
+      </div>
+    </div>
   );
 }
 
