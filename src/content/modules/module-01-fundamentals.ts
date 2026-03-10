@@ -18,10 +18,62 @@ export const module01: Module = {
       titleEn: 'Introduction to Neurodiagnostics',
       description: 'Historia, rol clínico y ética del electrodiagnóstico',
       children: [
-        { id: 'history', title: 'Historia de la electrofisiología clínica', titleEn: 'History of clinical electrophysiology', content: 'Desde los experimentos de Galvani con las ancas de rana en 1791, pasando por los primeros electromiógrafo clínicos de Adrian y Bronk (1929), hasta los modernos equipos digitales de neuroconducción. La electrofisiología clínica ha evolucionado de una curiosidad científica a una herramienta diagnóstica fundamental en neurología y rehabilitación.' },
-        { id: 'clinical-role', title: 'Rol del electrodiagnóstico en medicina', titleEn: 'Role of electrodiagnostics in medicine', content: 'Los estudios de electrodiagnóstico (EDx) son una extensión del examen neurológico que proporciona datos objetivos sobre la función del sistema nervioso periférico y muscular. Permite localizar lesiones (raíz, plexo, nervio, unión neuromuscular, músculo), determinar fisiopatología (axonal vs. desmielinizante), estimar severidad y pronóstico, y guiar decisiones terapéuticas.' },
-        { id: 'laboratory', title: 'El laboratorio de neurofisiología: equipamiento y bioseguridad', titleEn: 'Neurophysiology laboratory: equipment and biosafety', content: 'Un laboratorio de EDx requiere: equipo de EMG/NCS con amplificador diferencial, estimulador eléctrico, altavoz, pantalla de visualización, electrodos de superficie y de aguja, gel conductor, alcohol, guantes, contenedor de punzocortantes. Debe cumplir con normativas de bioseguridad para prevención de infecciones y manejo de residuos biológico-infecciosos.' },
-        { id: 'ethics', title: 'Ética y prevención cuaternaria en electrodiagnóstico', titleEn: 'Ethics and quaternary prevention', content: 'La prevención cuaternaria en electrodiagnóstico implica evitar indicaciones innecesarias de estudios, respetar el principio de no maleficencia (los estudios son invasivos y dolorosos), informar adecuadamente al paciente, y reportar hallazgos con honestidad. El método clínico debe guiar la indicación, no la disponibilidad del equipo.' },
+        { id: 'history', title: 'Historia de la electrofisiología clínica', titleEn: 'History of clinical electrophysiology',
+          content: 'La electrofisiología clínica tiene sus raíces en los experimentos pioneros de Luigi Galvani en 1791, quien demostró que la estimulación eléctrica de los nervios de las ancas de rana producía contracción muscular, estableciendo el concepto de "electricidad animal".\n\nEn 1929, Edgar Adrian y Detlev Bronk desarrollaron el primer electrodo de aguja concéntrica capaz de registrar la actividad de una sola unidad motora, lo que marcó el nacimiento de la electromiografía clínica moderna. Fritz Buchthal, en las décadas de 1950-1960, estandarizó los valores normales de los potenciales de acción de unidad motora (PAUM) por músculo y edad.\n\nLa neuroconducción se consolidó con los trabajos de Hodes, Larrabee y German (1948) midiendo velocidades de conducción en nervios humanos. La estimulación nerviosa repetitiva para trastornos de unión neuromuscular fue desarrollada por Harvey y Masland (1941). Erik Stålberg introdujo la EMG de fibra única (SFEMG) en los años 1960, permitiendo medir el jitter neuromuscular con precisión sin precedentes.\n\nEn la era moderna, los equipos digitales con análisis automático de potenciales, software de descomposición de señales y la integración con ecografía neuromuscular han expandido enormemente las capacidades diagnósticas del laboratorio de electrodiagnóstico.',
+          clinicalPearls: [
+            'El primer electrodo de aguja concéntrica (Adrian & Bronk, 1929) sigue siendo el tipo de electrodo más utilizado en la práctica clínica actual.',
+            'La obra de Buchthal sobre valores normales de PAUM por músculo y edad sigue siendo la referencia estándar más de 60 años después.',
+          ],
+          keyPoints: [
+            'Galvani (1791): descubrimiento de la electricidad animal.',
+            'Adrian y Bronk (1929): primer electrodo de aguja concéntrica.',
+            'Buchthal (1950-60): estandarización de valores normales de PAUM.',
+            'Stålberg (1960s): invención de la EMG de fibra única (SFEMG).',
+            'Era moderna: equipos digitales, análisis automático y ecografía neuromuscular.',
+          ],
+          youtubeUrls: [
+            { title: 'Historia de la Electromiografía', videoId: 'dPHnBPXRQxc' },
+          ],
+        },
+        { id: 'clinical-role', title: 'Rol del electrodiagnóstico en medicina', titleEn: 'Role of electrodiagnostics in medicine',
+          content: 'Los estudios de electrodiagnóstico (EDx) constituyen una extensión del examen neurológico que proporciona datos objetivos y cuantitativos sobre la función del sistema nervioso periférico y muscular. No son un estudio aislado, sino que deben interpretarse siempre en el contexto de la historia clínica y el examen físico.\n\nLas funciones principales del EDx incluyen:\n\n• Localización anatómica de la lesión: permite distinguir entre patología de raíz nerviosa, plexo, nervio periférico, unión neuromuscular o músculo.\n• Determinación de la fisiopatología: diferencia procesos axonales (pérdida de amplitud) de desmielinizantes (enlentecimiento, bloqueos de conducción).\n• Estimación de severidad: cuantifica el grado de pérdida axonal o disfunción desmielinizante.\n• Estimación pronóstica: predice la recuperación funcional basándose en el tipo y grado de lesión.\n• Guía terapéutica: orienta decisiones quirúrgicas (ej. descompresión en STC severo) o médicas (ej. IVIg en CIDP).\n\nEl electrodiagnóstico incluye tres componentes principales: estudios de conducción nerviosa (NCS), electromiografía de aguja (EMG) y pruebas especiales (ENR, SFEMG, potenciales evocados). Un estudio completo típicamente combina NCS y EMG de forma secuencial, adaptando el protocolo según la pregunta clínica.',
+          clinicalPearls: [
+            'Siempre adapta el protocolo EDx a la pregunta clínica específica. Un estudio "de rutina" sin hipótesis clínica tiene bajo rendimiento diagnóstico.',
+            'El EDx es una extensión del examen neurológico, NO un sustituto. El examen físico previo es obligatorio.',
+          ],
+          keyPoints: [
+            'El EDx localiza lesiones: raíz, plexo, nervio, UNM o músculo.',
+            'Diferencia fisiopatología: axonal vs. desmielinizante.',
+            'Estima severidad, pronóstico y guía decisiones terapéuticas.',
+            'Los tres componentes son: NCS, EMG de aguja y pruebas especiales.',
+          ],
+        },
+        { id: 'laboratory', title: 'El laboratorio de neurofisiología: equipamiento y bioseguridad', titleEn: 'Neurophysiology laboratory: equipment and biosafety',
+          content: 'Un laboratorio de electrodiagnóstico moderno requiere equipamiento especializado, un ambiente controlado y estrictas normas de bioseguridad.\n\n**Equipamiento esencial:**\n• Equipo de EMG/NCS con amplificador diferencial de alta ganancia (CMRR ≥100 dB).\n• Estimulador eléctrico con control preciso de intensidad (0-100 mA) y duración del estímulo (0.05-1.0 ms).\n• Altavoz de alta fidelidad (el sonido es crucial para identificar actividad espontánea).\n• Monitor de visualización con resolución suficiente para medir latencias y amplitudes.\n• Electrodos: de superficie (disco, barra, anillo) y de aguja (concéntrica, monopolar, fibra única).\n• Termómetro infrarrojo o de contacto para medir temperatura cutánea.\n• Gel conductor, pasta abrasiva, alcohol al 70%, guantes no estériles.\n• Contenedor rígido para punzocortantes y bolsas para residuos biológico-infecciosos (RPBI).\n\n**Condiciones ambientales:**\nLa sala debe mantener una temperatura ambiente de 22-25°C para minimizar el enfriamiento de extremidades. Debe contar con toma de tierra (ground) adecuada y minimizar fuentes de interferencia electromagnética (alejarse de motores eléctricos, camas eléctricas, bombas de infusión).\n\n**Bioseguridad:**\nSe deben seguir precauciones estándar universales: uso de guantes para todo procedimiento invasivo, agujas desechables de un solo uso (nunca reutilizar), disposición inmediata en contenedor de punzocortantes, limpieza de superficies entre pacientes, y lavado de manos antes y después de cada estudio.',
+          clinicalPearls: [
+            'El altavoz es tan importante como la pantalla: muchos hallazgos patológicos se identifican primero por el sonido (fibrilaciones = "lluvia", miotonía = "bombardero en picada").',
+            'Mantén la temperatura ambiente a 22-25°C y calienta las extremidades ANTES del estudio para evitar falsos positivos de desmielinización.',
+          ],
+          keyPoints: [
+            'Equipo básico: amplificador diferencial, estimulador, altavoz, electrodos.',
+            'Temperatura ambiente óptima: 22-25°C.',
+            'Agujas son SIEMPRE desechables y de un solo uso.',
+            'Precauciones estándar universales obligatorias.',
+          ],
+        },
+        { id: 'ethics', title: 'Ética y prevención cuaternaria en electrodiagnóstico', titleEn: 'Ethics and quaternary prevention',
+          content: 'La ética en electrodiagnóstico se rige por los mismos principios bioéticos fundamentales que toda la práctica médica: beneficencia, no maleficencia, autonomía y justicia. Sin embargo, el EDx tiene consideraciones particulares por su naturaleza invasiva y potencialmente dolorosa.\n\n**Prevención cuaternaria:**\nConcepto desarrollado por Marc Jamouille, se refiere a las acciones tomadas para evitar exponer al paciente a estudios innecesarios o potencialmente dañinos. En EDx esto implica:\n• No realizar estudios sin una indicación clínica clara basada en la historia y el examen neurológico.\n• No solicitar estudios "de rutina" sin hipótesis diagnóstica.\n• Evitar la repetición innecesaria de estudios recientes.\n• Limitar la extensión del estudio a lo clínicamente relevante.\n\n**Consentimiento informado:**\nEl paciente debe ser informado sobre: el propósito del estudio, la descripción del procedimiento (incluyendo que involucra estimulación eléctrica y/o inserción de agujas), las molestias esperadas, los riesgos (hematoma, infección, neumotórax en músculos torácicos), y las alternativas diagnósticas.\n\n**Reporte de resultados:**\nEl informe debe ser claro, conciso, evitar ambigüedades, reportar hallazgos con honestidad (incluyendo estudios normales), correlacionar con la clínica y evitar diagnósticos fuera del alcance del estudio.',
+          clinicalPearls: [
+            'El mejor electrodiagnóstico es aquel que responde una pregunta clínica específica con el mínimo de molestias para el paciente.',
+            'Un estudio electrodiagnóstico normal es un resultado válido e importante: descarta patologías graves y reorienta el diagnóstico.',
+          ],
+          keyPoints: [
+            'Prevención cuaternaria: evitar estudios innecesarios o dañinos.',
+            'Consentimiento informado obligatorio: explicar procedimiento, molestias y riesgos.',
+            'El método clínico guía la indicación, no la disponibilidad del equipo.',
+            'Reportar hallazgos con honestidad, incluyendo estudios normales.',
+          ],
+        },
       ]
     },
     {
@@ -30,12 +82,84 @@ export const module01: Module = {
       titleEn: 'Electrical and Electronic Basics',
       description: 'Principios eléctricos aplicados al electrodiagnóstico',
       children: [
-        { id: 'voltage-current', title: 'Principios de electricidad: voltaje, corriente, resistencia', titleEn: 'Electricity principles', content: 'Voltaje (V): diferencia de potencial entre dos puntos, medido en voltios. Corriente (I): flujo de carga eléctrica, medido en amperios. Resistencia (R): oposición al flujo de corriente, medida en ohmios. Ley de Ohm: V = I × R. En electrodiagnóstico trabajamos con señales del orden de microvoltios (µV) a milivoltios (mV).' },
-        { id: 'differential-amplification', title: 'Amplificación diferencial', titleEn: 'Differential amplification', content: 'El amplificador diferencial registra la diferencia de potencial entre dos electrodos (activo y referencia), rechazando señales comunes a ambos (ruido ambiental). Es la base del registro de potenciales bioeléctricos en EMG y NCS.' },
-        { id: 'filters', title: 'Filtros: pasa-bajos, pasa-altos, notch', titleEn: 'Filters: low-pass, high-pass, notch', content: 'Filtro pasa-bajos: permite el paso de frecuencias bajas (ej. 10 kHz para aguja EMG). Filtro pasa-altos: permite el paso de frecuencias altas (ej. 10-20 Hz para EMG de aguja, 2 Hz para NCS). Filtro Notch: elimina una frecuencia específica (50/60 Hz de la red eléctrica) — usar con precaución porque puede distorsionar los potenciales.' },
-        { id: 'impedance', title: 'Impedancia de electrodos', titleEn: 'Electrode impedance', content: 'La impedancia del electrodo debe ser menor a 5-10 kΩ para obtener registros de calidad. Se reduce con limpieza adecuada de la piel (abrasión, alcohol) y uso de gel conductor. Una impedancia alta produce registros con mucho ruido y potenciales de baja calidad.' },
-        { id: 'signal-noise-cmrr', title: 'Relación señal/ruido y CMRR', titleEn: 'Signal-to-noise ratio and CMRR', content: 'La relación señal/ruido (SNR) debe ser alta para distinguir los potenciales biológicos del ruido de fondo. El CMRR (Common Mode Rejection Ratio) indica la capacidad del amplificador para rechazar interferencias comunes. Un CMRR típico es ≥ 100,000:1 (100 dB).' },
-        { id: 'digitalization', title: 'Digitalización y muestreo de señales', titleEn: 'Signal digitalization and sampling', content: 'Las señales analógicas se convierten a digitales mediante un conversor A/D (analógico a digital). La frecuencia de muestreo debe cumplir el teorema de Nyquist: al menos el doble de la frecuencia máxima de la señal (ej. para señales de hasta 10 kHz, muestrear a ≥ 20 kHz).' },
+        { id: 'voltage-current', title: 'Principios de electricidad: voltaje, corriente, resistencia', titleEn: 'Electricity principles',
+          content: 'Los tres conceptos fundamentales de electricidad son esenciales para entender cómo funcionan los equipos de electrodiagnóstico y cómo se generan las señales bioeléctricas.\n\n**Voltaje (V):** Es la diferencia de potencial eléctrico entre dos puntos, medido en voltios. En el cuerpo humano, el potencial de reposo de una membrana axonal es de aproximadamente -70 a -90 mV. Durante un potencial de acción, el voltaje se invierte transitoriamente a +30 mV.\n\n**Corriente (I):** Es el flujo de carga eléctrica a través de un conductor, medido en amperios. En los tejidos biológicos, la corriente es transportada por iones (Na+, K+, Cl-, Ca2+), no por electrones.\n\n**Resistencia (R):** Es la oposición al flujo de corriente, medida en ohmios (Ω). La Ley de Ohm establece la relación: V = I × R.\n\nEn electrodiagnóstico trabajamos con señales extremadamente pequeñas: los SNAP son del orden de 5-80 µV y los CMAP de 2-20 mV. El estimulador eléctrico utiliza corrientes de 0-100 mA con duraciones de 0.05-1.0 ms para despolarizar los nervios.',
+          clinicalPearls: [
+            'Los SNAP son 1,000 veces más pequeños que los CMAP. Por eso los sensitivos son mucho más susceptibles al ruido y requieren promediación (averaging).',
+            'La impedancia de la piel puede variar de 1 kΩ a >100 kΩ. La preparación adecuada de la piel (abrasión + alcohol) reduce la impedancia a <5 kΩ.',
+          ],
+          keyPoints: [
+            'Voltaje = diferencia de potencial (V). Corriente = flujo de carga (A). Resistencia = oposición al flujo (Ω).',
+            'Ley de Ohm: V = I × R.',
+            'SNAP: 5-80 µV. CMAP: 2-20 mV.',
+            'En el cuerpo la corriente es iónica (Na+, K+, Cl-, Ca2+).',
+          ],
+        },
+        { id: 'differential-amplification', title: 'Amplificación diferencial', titleEn: 'Differential amplification',
+          content: 'El amplificador diferencial es el corazón de todo equipo de electrodiagnóstico. Su función es registrar la diferencia de potencial entre dos electrodos (denominados G1 o activo y G2 o referencia), rechazando simultáneamente cualquier señal que sea idéntica en ambos electrodos (ruido de modo común).\n\n**Principio de funcionamiento:**\nSi G1 registra señal A y G2 registra señal B, el amplificador muestra: A - B. El ruido ambiental (interferencia electromagnética de 60 Hz, equipos eléctricos) llega igualmente a ambos electrodos, por lo que se cancela: Ruido - Ruido = 0.\n\n**Electrodos:**\n• **G1 (Activo):** Se coloca sobre el músculo o nervio de interés (vientre muscular o punto de registro del nervio sensitivo).\n• **G2 (Referencia):** Se coloca en un sitio eléctricamente inactivo (tendón distal, hueso).\n• **Ground (Tierra):** Electrodo de tierra colocado entre el estimulador y el electrodo de registro para drenar corrientes de fuga.\n\nSi la ubicación del electrodo activo es incorrecta (fuera del punto motor), se obtendrá un potencial con deflexión inicial positiva, indicando que la señal se propaga HACIA el electrodo en lugar de originarse debajo de él.',
+          clinicalPearls: [
+            'Una deflexión inicial positiva en el CMAP indica electrodo activo mal posicionado. Reubica G1 sobre el punto motor del músculo.',
+            'El electrodo de tierra (ground) SIEMPRE debe colocarse entre el estimulador y los electrodos de registro para minimizar artefacto de estímulo.',
+          ],
+          keyPoints: [
+            'Amplificador diferencial: registra A - B, rechazando ruido común.',
+            'G1 (activo): sobre punto motor o nervio. G2 (referencia): sitio inactivo.',
+            'Ground: entre estimulador y registro.',
+            'Deflexión inicial positiva = electrodo mal posicionado.',
+          ],
+        },
+        { id: 'filters', title: 'Filtros: pasa-bajos, pasa-altos, notch', titleEn: 'Filters: low-pass, high-pass, notch',
+          content: 'Los filtros son componentes esenciales que permiten aislar las señales bioeléctricas de interés eliminando frecuencias no deseadas.\n\n**Filtro pasa-bajos (Low-pass):** Permite el paso de frecuencias por debajo de un umbral y atenúa las superiores. Para EMG de aguja se usa típicamente 10 kHz; para NCS motora 10 kHz. Su función principal es eliminar ruido de alta frecuencia.\n\n**Filtro pasa-altos (High-pass):** Permite el paso de frecuencias por encima de un umbral y atenúa las inferiores. Para EMG de aguja: 10-20 Hz; para NCS sensitiva: 20 Hz; para NCS motora: 2 Hz. Elimina la línea base errante y el movimiento.\n\n**Filtro Notch (Banda eliminada):** Elimina selectivamente la frecuencia de la red eléctrica (50 Hz en Europa/Latinoamérica, 60 Hz en EE.UU./México). **PRECAUCIÓN:** El uso del filtro notch puede distorsionar las amplitudes de los potenciales y no debe usarse rutinariamente para CMAP. Solo activarlo cuando la interferencia de línea no se puede resolver con otras medidas (mejorar tierra, reducir impedancia, alejar fuentes de ruido).\n\n**Efecto de los filtros en los potenciales:**\n• Aumentar el filtro pasa-altos: reduce la amplitud y acorta la duración del potencial.\n• Disminuir el filtro pasa-bajos: suaviza el potencial, reduce amplitud y prolonga la latencia.',
+          clinicalPearls: [
+            'NUNCA uses el filtro notch como primera línea para eliminar interferencia de 60 Hz. Primero corrige la impedancia (limpiar piel, gel), verifica la tierra, y aleja equipos eléctricos.',
+            'Cambiar los filtros durante el estudio altera las mediciones. Usa siempre los mismos ajustes estándar para poder comparar con valores normativos.',
+          ],
+          keyPoints: [
+            'Pasa-bajos: elimina ruido de alta frecuencia (10 kHz típico).',
+            'Pasa-altos: elimina línea base errante (2-20 Hz típico).',
+            'Notch: elimina 50/60 Hz — usar con precaución, distorsiona amplitudes.',
+            'Cambiar filtros altera amplitudes, latencias y duración de los potenciales.',
+          ],
+        },
+        { id: 'impedance', title: 'Impedancia de electrodos', titleEn: 'Electrode impedance',
+          content: 'La impedancia es la oposición total al flujo de corriente alterna en un circuito, incorporando tanto resistencia como reactancia (capacitiva e inductiva). En electrodiagnóstico, la impedancia del electrodo-piel es el factor más importante que determina la calidad de los registros.\n\n**Valores objetivo:**\nLa impedancia debe mantenerse por debajo de 5-10 kΩ para obtener registros de alta calidad. El balance de impedancia entre G1, G2 y tierra debe ser similar (<1 kΩ de diferencia) para maximizar el rechazo de modo común (CMRR).\n\n**Factores que aumentan la impedancia:**\n• Piel seca, grasa, sudor excesivo o cremas.\n• Electrodo mal adherido o con gel insuficiente.\n• Vello corporal abundante.\n• Edema o tejido subcutáneo grueso.\n\n**Cómo reducir la impedancia:**\n• Limpiar la piel con alcohol al 70%.\n• Frotar suavemente con pasta abrasiva (NuPrep® o equivalente).\n• Aplicar gel conductor suficiente.\n• Asegurar contacto firme del electrodo con la piel.\n• Rasurar si hay vello excesivo.',
+          clinicalPearls: [
+            'Si un SNAP no se puede obtener, antes de declararlo "ausente", verifica la impedancia. Una impedancia alta puede enterrar la señal en el ruido.',
+            'El desequilibrio de impedancia entre G1 y G2 (>1 kΩ de diferencia) reduce dramáticamente el CMRR y aumenta el ruido.',
+          ],
+          keyPoints: [
+            'Impedancia objetivo: <5-10 kΩ.',
+            'Balance entre electrodos: <1 kΩ de diferencia.',
+            'Preparación: alcohol + abrasión + gel conductor.',
+            'Impedancia alta = más ruido = potenciales de peor calidad.',
+          ],
+        },
+        { id: 'signal-noise-cmrr', title: 'Relación señal/ruido y CMRR', titleEn: 'Signal-to-noise ratio and CMRR',
+          content: 'La relación señal/ruido (SNR, Signal-to-Noise Ratio) es la medida fundamental de la calidad de un registro electrodiagnóstico. Indica qué tan bien se distingue la señal biológica del ruido de fondo.\n\n**Fuentes de ruido:**\n• Interferencia de línea eléctrica (50/60 Hz): la más común.\n• Ruido electromagnético de equipos médicos (bombas de infusión, camas eléctricas, lámparas fluorescentes).\n• Artefacto de movimiento del paciente o del cable.\n• Ruido intrínseco del amplificador (inevitable pero mínimo en equipos modernos).\n\n**CMRR (Common Mode Rejection Ratio):**\nEl CMRR cuantifica la capacidad del amplificador diferencial para rechazar señales idénticas en ambos electrodos. Se expresa en decibelios (dB).\n• CMRR típico de equipos modernos: ≥100 dB (100,000:1).\n• Esto significa que una señal de modo común de 1 V se reduce a solo 10 µV en la salida.\n\n**Cómo mejorar el SNR:**\n• Reducir impedancia (preparación de piel).\n• Promediación (averaging): mejora el SNR proporcionalmente a la raíz cuadrada del número de repeticiones — si promedias 100 estímulos, el SNR mejora ×10.\n• Usar filtros apropiados.\n• Ambiente eléctrico limpio.',
+          clinicalPearls: [
+            'La promediación (averaging) mejora el SNR proporcionalmente a √n. Para mejorar el SNR al doble, necesitas 4 veces más repeticiones, no el doble.',
+            'Para estudios sensitivos (SNAP), promediar al menos 10-20 trazos es mandatorio. Para CMAP, generalmente un solo trazo es suficiente.',
+          ],
+          keyPoints: [
+            'SNR alto = mejor registro. Depende de impedancia, ruido y amplificación.',
+            'CMRR ≥100 dB es estándar en equipos modernos.',
+            'Averaging mejora SNR proporcionalmente a √n.',
+            'Preparación de piel + ambiente limpio = mejor calidad de señal.',
+          ],
+        },
+        { id: 'digitalization', title: 'Digitalización y muestreo de señales', titleEn: 'Signal digitalization and sampling',
+          content: 'Las señales bioeléctricas son analógicas (continuas en el tiempo), pero los equipos modernos las convierten a formato digital para almacenamiento, procesamiento y análisis.\n\n**Conversor analógico-digital (A/D):**\nTrasforma el voltaje continuo en valores numéricos discretos. La resolución se mide en bits: un conversor de 16 bits puede representar 65,536 niveles diferentes de voltaje, lo cual es más que suficiente para señales de EMG.\n\n**Frecuencia de muestreo:**\nDebe cumplir el **Teorema de Nyquist**: la frecuencia de muestreo debe ser al menos el doble de la frecuencia máxima de la señal. En la práctica:\n• Señales de EMG (frecuencias hasta 10 kHz): muestrear a ≥20 kHz.\n• Señales de NCS (frecuencias hasta 10 kHz): muestrear a ≥20 kHz.\n• Si la frecuencia de muestreo es insuficiente, se produce **aliasing**: la señal digital no representa fielmente la señal original, causando artefactos y distorsión.\n\n**Ventajas de la digitalización:**\n• Almacenamiento permanente de datos.\n• Análisis cuantitativo automático (medición de amplitudes, latencias, áreas).\n• Promediación digital (averaging) para mejorar el SNR.\n• Análisis de descomposición de potenciales de unidad motora.\n• Tele-electrodiagnóstico y consulta remota.',
+          clinicalPearls: [
+            'Un equipo con baja frecuencia de muestreo puede perder picos de amplitud y subestimar las velocidades de conducción. Verifica que tu equipo muestree a ≥20 kHz.',
+            'El aliasing es un artefacto sutil: la señal parece normal pero las mediciones son incorrectas. Es prevenible usando frecuencias de muestreo adecuadas.',
+          ],
+          keyPoints: [
+            'Conversor A/D: transforma señal analógica a digital.',
+            'Teorema de Nyquist: frecuencia de muestreo ≥ 2× frecuencia máxima de la señal.',
+            'EMG/NCS: muestrear a ≥20 kHz.',
+            'Aliasing: artefacto por submuestreo, produce mediciones erróneas.',
+          ],
+        },
       ]
     },
     {
@@ -49,8 +173,31 @@ export const module01: Module = {
           title: 'Arquitectura de la neurona motora',
           titleEn: 'Motor neuron architecture',
           children: [
-            { id: 'soma-dendrites-axon', title: 'Soma, dendritas, axón, terminales sinápticas', titleEn: 'Soma, dendrites, axon, synaptic terminals', content: 'La neurona motora inferior (motoneurona alfa) tiene su soma en el asta anterior de la médula espinal, múltiples dendritas que reciben input sináptico, un largo axón mielinizado que viaja por las raíces ventrales y nervios periféricos, y terminales sinápticas que forman la unión neuromuscular con fibras musculares esqueléticas.' },
-            { id: 'umn-vs-lmn', title: 'Neurona motora superior vs. inferior', titleEn: 'Upper vs. lower motor neuron', content: 'Neurona motora superior (UMN): corteza motora → médula espinal (vía piramidal). Signos de lesión: espasticidad, hiperreflexia, Babinski, clonus. Neurona motora inferior (LMN): asta anterior → músculo. Signos de lesión: atrofia, fasciculaciones, hiporreflexia, hipotonía. La EMG evalúa directamente la LMN y el músculo.' },
+            { id: 'soma-dendrites-axon', title: 'Soma, dendritas, axón, terminales sinápticas', titleEn: 'Soma, dendrites, axon, synaptic terminals',
+              content: 'La neurona motora inferior (motoneurona alfa) es la vía final común del sistema motor. Su estructura se divide en cuatro regiones funcionales:\n\n**Soma (cuerpo celular):** Localizado en el asta anterior de la médula espinal (lámina IX de Rexed). Contiene el núcleo y es el centro integrador de señales excitatorias e inhibitorias.\n\n**Dendritas:** Múltiples ramificaciones que reciben input sináptico de interneuronas, vías piramidales y aferencias sensoriales. La integración de miles de sinapsis determina si la motoneurona dispara.\n\n**Axón:** Un único axón largo y mielinizado que emerge del cono axonal, viaja por la raíz ventral, se integra en el plexo y recorre el nervio periférico hasta el músculo. Su diámetro (12-20 µm para las α) determina la velocidad de conducción.\n\n**Terminales sinápticas:** El axón se ramifica en múltiples terminales que forman la unión neuromuscular (UNM) con las fibras musculares esqueléticas. Cada terminal contiene vesículas de acetilcolina.',
+              clinicalPearls: [
+                'En enfermedades de motoneurona (ELA), la degeneración del soma produce denervación progresiva. Las motoneuronas sobrevivientes reinvervan fibras huérfanas, produciendo PAUM grandes y polifásicos.',
+                'El cono axonal es el sitio de menor umbral donde se inicia el potencial de acción.',
+              ],
+              keyPoints: [
+                'Motoneurona α: soma en asta anterior, axón largo mielinizado, terminales en UNM.',
+                'Diámetro axonal (12-20 µm) determina la velocidad de conducción.',
+                'La EMG registra la actividad originada en esta unidad funcional.',
+              ],
+            },
+            { id: 'umn-vs-lmn', title: 'Neurona motora superior vs. inferior', titleEn: 'Upper vs. lower motor neuron',
+              content: 'La distinción entre neurona motora superior (UMN) e inferior (LMN) es uno de los conceptos más fundamentales en neurología y electrodiagnóstico.\n\n**Neurona motora superior (UMN):**\nOrigina en la corteza motora primaria. Su axón desciende por la cápsula interna, pedúnculos cerebrales y tracto corticoespinal (vía piramidal), decusando en las pirámides bulbares.\n\n**Signos de lesión UMN:** Espasticidad, hiperreflexia, clonus, Babinski positivo, pérdida del control fino. **NO hay atrofia temprana ni fasciculaciones.**\n\n**Neurona motora inferior (LMN):**\nSoma en asta anterior → raíz ventral → plexo → nervio periférico → UNM → músculo.\n\n**Signos de lesión LMN:** Atrofia muscular, fasciculaciones, hiporreflexia/arreflexia, hipotonía, debilidad flácida. Las fibrilaciones en EMG documentan denervación activa.\n\n**La EMG evalúa directamente solo la LMN y el músculo.** No puede evaluar la UMN directamente.',
+              clinicalPearls: [
+                'En ELA coexisten signos de UMN y LMN. La EMG documenta los signos de LMN; los signos de UMN deben documentarse clínicamente.',
+                'EMG no puede diagnosticar lesiones de UMN aisladas.',
+              ],
+              keyPoints: [
+                'UMN: corteza → médula. Lesión causa espasticidad, hiperreflexia, Babinski.',
+                'LMN: asta anterior → músculo. Lesión causa atrofia, fasciculaciones, hiporreflexia.',
+                'EMG evalúa directamente solo LMN y músculo.',
+                'ELA: coexistencia de signos UMN + LMN.',
+              ],
+            },
           ]
         },
         {
@@ -70,8 +217,30 @@ export const module01: Module = {
           titleEn: 'Nerve fiber classification',
           children: [
             { id: 'fiber-types', title: 'Fibras Aα, Aβ, Aδ, B y C', titleEn: 'Fiber types Aα, Aβ, Aδ, B and C', content: 'Aα: mielinizadas gruesas (12-20 µm), propiocepción y motoras somáticas, 70-120 m/s. Aβ: mielinizadas medias (5-12 µm), tacto discriminativo y presión, 30-70 m/s. Aδ: mielinizadas finas (2-5 µm), dolor agudo y temperatura, 12-30 m/s. B: mielinizadas finas, autónomas preganglionares, 3-15 m/s. C: amielínicas (0.3-1.3 µm), dolor lento, temperatura, autónomas postganglionares, 0.5-2 m/s.' },
-            { id: 'cv-by-fiber', title: 'Velocidades de conducción por tipo de fibra', titleEn: 'Conduction velocities by fiber type' },
-            { id: 'clinical-correlation', title: 'Correlación clínica de cada grupo', titleEn: 'Clinical correlation of each group' },
+            { id: 'cv-by-fiber', title: 'Velocidades de conducción por tipo de fibra', titleEn: 'Conduction velocities by fiber type',
+              content: 'La velocidad de conducción (VC) está determinada por el diámetro del axón y el grado de mielinización. La relación es aproximadamente: VC (m/s) ≈ 6 × diámetro (µm) para fibras mielinizadas.\n\n**Relación diámetro-velocidad:**\n• 20 µm → ~120 m/s (motoneurona α gruesa)\n• 12 µm → ~70 m/s (fibra Aα delgada)\n• 6 µm → ~36 m/s (fibra Aβ)\n• 3 µm → ~18 m/s (fibra Aδ)\n• 1 µm amielínica → ~1 m/s (fibra C)\n\n**Factores que modifican la VC:**\n• **Temperatura:** Disminuye ~1.5-2 m/s por cada °C debajo de 33°C. Es el artefacto más común.\n• **Edad:** Disminuye ~1-2 m/s por década después de los 60 años.\n• **Desmielinización patológica:** Reduce VC por debajo del 70% del límite inferior normal (LIN).\n• **Pérdida axonal selectiva:** La pérdida de fibras gruesas reduce las VC máximas, pero suele quedar entre 70-80% del LIN.',
+              clinicalPearls: [
+                'VC <70% del LIN en ≥2 nervios es un criterio electrodiagnóstico de desmielinización (criterio para CIDP).',
+                'Una VC levemente reducida (70-80% LIN) puede deberse a pérdida axonal de fibras gruesas, no necesariamente a desmielinización.',
+              ],
+              keyPoints: [
+                'VC ≈ 6 × diámetro (µm) para fibras mielinizadas.',
+                'Temperatura: -1.5 a -2 m/s por cada °C <33°C.',
+                'VC <70% LIN: criterio de desmielinización.',
+              ],
+            },
+            { id: 'clinical-correlation', title: 'Correlación clínica de cada grupo de fibras', titleEn: 'Clinical correlation of each fiber group',
+              content: 'Comprender qué tipo de fibra se afecta en cada patología permite dirigir el estudio electrodiagnóstico de forma racional.\n\n**Fibras gruesas mielinizadas (Aα, Aβ):**\n• Evaluadas por NCS convencionales (CMAP y SNAP).\n• Afectación causa: debilidad (Aα motoras), pérdida de tacto fino, propiocepción y vibración (Aβ), ataxia sensitiva, Romberg positivo.\n• Patologías: CIDP, GBS, anti-MAG, neuropatía por déficit de B12.\n\n**Fibras finas (Aδ, C):**\n• NO evaluadas por NCS convencionales.\n• Afectación causa: dolor neuropático (quemazón, alodinia), pérdida de temperatura, disfunción autonómica.\n• Se evalúan: biopsia de piel (IENFD), QST, potenciales evocados por láser.\n• Patologías: neuropatía de fibra fina (diabetes temprana, amiloidosis, Fabry, idiopática).\n\n**Un NCS normal NO descarta neuropatía** si solo se afectan fibras finas.',
+              clinicalPearls: [
+                'NCS normales + dolor neuropático = sospecha de neuropatía de fibra fina. Solicitar biopsia de piel.',
+                'Las fibras gruesas se afectan primero en GBS/CIDP; las finas se afectan primero en diabetes y amiloidosis.',
+              ],
+              keyPoints: [
+                'Fibras gruesas: evaluadas por NCS convencionales.',
+                'Fibras finas: NO evaluadas por NCS → biopsia de piel.',
+                'Estudio EDx normal NO descarta toda neuropatía.',
+              ],
+            },
           ]
         },
         {
@@ -80,7 +249,18 @@ export const module01: Module = {
           titleEn: 'Peripheral nerve anatomy',
           children: [
             { id: 'endo-peri-epineurium', title: 'Endoneuro, perineuro, epineuro', titleEn: 'Endoneurium, perineurium, epineurium', content: 'El nervio periférico se organiza en: Endoneuro (tejido conectivo laxo que rodea cada fibra nerviosa individual), Perineuro (vaina que rodea cada fascículo, forma la barrera hemato-neural), y Epineuro (tejido conectivo que agrupa todos los fascículos formando el tronco nervioso). La lesión de diferentes capas define el grado de severidad (clasificación de Sunderland).' },
-            { id: 'vasa-nervorum', title: 'Vasa nervorum y barrera hemato-neural', titleEn: 'Vasa nervorum and blood-nerve barrier' },
+            { id: 'vasa-nervorum', title: 'Vasa nervorum y barrera hemato-neural', titleEn: 'Vasa nervorum and blood-nerve barrier',
+              content: 'Los vasa nervorum son los vasos sanguíneos que irrigan el nervio periférico, organizados en red epineural (sin barrera), perineural y endoneural (con barrera hemato-neural).\n\n**Barrera hemato-neural:**\nAnáloga a la barrera hematoencefálica, formada por tight junctions en capilares endoneurales y capas del perineuro. Regula selectivamente el paso de sustancias al interior del fascículo nervioso.\n\n**Patología vascular:**\n• **Vasculitis de vasa nervorum:** Inflamación y oclusión de vasos del nervio que produce infartos nerviosos focales → mononeuropatía múltiple (poliarteritis nodosa, granulomatosis con poliangeítis, NSVN).\n• **Neuropatía isquémica diabética:** Microangiopatía de vasa nervorum como mecanismo de la neuropatía diabética.\n• **Ruptura de barrera:** En CIDP y GBS, la pérdida de integridad permite ingreso de anticuerpos y células inflamatorias.',
+              clinicalPearls: [
+                'Mononeuropatía múltiple de inicio agudo/subagudo = vasculitis hasta que se demuestre lo contrario.',
+                'En diabetes, la microangiopatía de los vasa nervorum es uno de los mecanismos principales de la neuropatía.',
+              ],
+              keyPoints: [
+                'Barrera hemato-neural: tight junctions en capilares endoneurales + perineuro.',
+                'Vasculitis de vasa nervorum: causa mononeuropatía múltiple.',
+                'Ruptura de barrera: permite entrada de anticuerpos en CIDP/GBS.',
+              ],
+            },
           ]
         },
         {

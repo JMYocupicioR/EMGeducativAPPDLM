@@ -2,7 +2,7 @@ import { useParams, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getModuleById } from '../../content/modules';
 import { Topic } from '../../types/content';
-import { ChevronRight, Home, ArrowLeft, ArrowRight, List, X, ChevronUp, BookMarked, ExternalLink, Play } from 'lucide-react';
+import { ChevronRight, Home, ArrowLeft, ArrowRight, List, X, ChevronUp, BookMarked, ExternalLink, Play, Lightbulb, Target, Youtube, ImageIcon } from 'lucide-react';
 import { getReferencesForTopic, Reference } from '../../content/topicReferences';
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 
@@ -175,6 +175,131 @@ function VideoSection({ videos }: { videos: { title: string; driveId: string }[]
               </button>
             )}
           </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ─── YouTube Section ─── */
+function YouTubeSection({ videos }: { videos: { title: string; videoId: string; startTime?: number }[] }) {
+  const [activeVideo, setActiveVideo] = useState<number | null>(null);
+
+  return (
+    <div className="mt-5 space-y-3">
+      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-red-600 dark:text-red-400">
+        <Youtube className="w-3.5 h-3.5" />
+        <span>Videos educativos ({videos.length})</span>
+      </div>
+      <div className={`grid gap-3 ${videos.length === 1 ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
+        {videos.map((video, idx) => (
+          <div key={idx} className="group">
+            {activeVideo === idx ? (
+              <div className="rounded-xl overflow-hidden border border-red-200/50 dark:border-red-700/30 shadow-lg shadow-red-500/5">
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.videoId}${video.startTime ? `?start=${video.startTime}` : ''}`}
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title={video.title}
+                  />
+                </div>
+                <div className="px-3 py-2 bg-slate-50/80 dark:bg-slate-800/80 flex items-center justify-between">
+                  <span className="text-xs font-medium text-slate-600 dark:text-slate-300 truncate">{video.title}</span>
+                  <button
+                    onClick={() => setActiveVideo(null)}
+                    className="text-xs text-slate-400 hover:text-red-500 transition-colors ml-2 flex-shrink-0"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <button
+                onClick={() => setActiveVideo(idx)}
+                className="w-full rounded-xl border border-slate-200/60 dark:border-slate-700/30 bg-gradient-to-br from-slate-50 to-red-50/30 dark:from-slate-800/60 dark:to-red-900/10 p-4 flex items-center gap-3 hover:border-red-300 dark:hover:border-red-600 hover:shadow-md hover:shadow-red-500/5 transition-all group text-left"
+              >
+                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/10 dark:bg-red-400/10 flex items-center justify-center group-hover:bg-red-500/20 dark:group-hover:bg-red-400/20 transition-colors">
+                  <Youtube className="w-4 h-4 text-red-600 dark:text-red-400" />
+                </span>
+                <div className="min-w-0">
+                  <span className="block text-sm font-medium text-slate-700 dark:text-slate-200 truncate group-hover:text-red-700 dark:group-hover:text-red-300 transition-colors">
+                    {video.title}
+                  </span>
+                  <span className="block text-[0.7rem] text-slate-400 dark:text-slate-500 mt-0.5">Click para reproducir</span>
+                </div>
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ─── Clinical Pearls Box ─── */
+function ClinicalPearlsBox({ pearls }: { pearls: string[] }) {
+  return (
+    <div className="mt-5 rounded-xl border border-amber-200/60 dark:border-amber-700/30 bg-gradient-to-br from-amber-50/80 to-yellow-50/50 dark:from-amber-900/20 dark:to-yellow-900/10 p-4 sm:p-5">
+      <div className="flex items-center gap-2 mb-3">
+        <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-amber-100 dark:bg-amber-800/40 flex items-center justify-center">
+          <Lightbulb className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+        </span>
+        <h4 className="text-sm font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider">Perlas Clínicas</h4>
+      </div>
+      <ul className="space-y-2">
+        {pearls.map((pearl, i) => (
+          <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-amber-900 dark:text-amber-200">
+            <span className="text-amber-500 dark:text-amber-400 mt-0.5 flex-shrink-0">💡</span>
+            <span>{renderInline(pearl, `pearl-${i}`)}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/* ─── Key Points Box ─── */
+function KeyPointsBox({ points }: { points: string[] }) {
+  return (
+    <div className="mt-5 rounded-xl border border-blue-200/60 dark:border-blue-700/30 bg-gradient-to-br from-blue-50/80 to-indigo-50/50 dark:from-blue-900/20 dark:to-indigo-900/10 p-4 sm:p-5">
+      <div className="flex items-center gap-2 mb-3">
+        <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-800/40 flex items-center justify-center">
+          <Target className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+        </span>
+        <h4 className="text-sm font-bold text-blue-800 dark:text-blue-300 uppercase tracking-wider">Puntos Clave</h4>
+      </div>
+      <ul className="space-y-2">
+        {points.map((point, i) => (
+          <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-blue-900 dark:text-blue-200">
+            <span className="text-blue-500 dark:text-blue-400 mt-0.5 flex-shrink-0">📌</span>
+            <span>{renderInline(point, `kp-${i}`)}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/* ─── Image Gallery ─── */
+function ImageGallery({ images }: { images: { src: string; alt: string; caption?: string }[] }) {
+  return (
+    <div className="mt-5 space-y-3">
+      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-600 dark:text-violet-400">
+        <ImageIcon className="w-3.5 h-3.5" />
+        <span>Imágenes ({images.length})</span>
+      </div>
+      <div className={`grid gap-4 ${images.length === 1 ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
+        {images.map((img, idx) => (
+          <figure key={idx} className="rounded-xl overflow-hidden border border-slate-200/50 dark:border-slate-700/30 shadow-sm">
+            <img src={img.src} alt={img.alt} className="w-full h-auto object-cover" loading="lazy" />
+            {img.caption && (
+              <figcaption className="px-3 py-2 bg-slate-50/80 dark:bg-slate-800/80 text-xs text-slate-500 dark:text-slate-400 text-center italic">
+                {img.caption}
+              </figcaption>
+            )}
+          </figure>
         ))}
       </div>
     </div>
@@ -386,15 +511,38 @@ export default function TopicPage() {
           {topic.content && (
             <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-white/80 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/30 shadow-sm">
               <RichContent text={topic.content} />
+              {topic.clinicalPearls && topic.clinicalPearls.length > 0 && (
+                <ClinicalPearlsBox pearls={topic.clinicalPearls} />
+              )}
+              {topic.keyPoints && topic.keyPoints.length > 0 && (
+                <KeyPointsBox points={topic.keyPoints} />
+              )}
+              {topic.imageUrls && topic.imageUrls.length > 0 && (
+                <ImageGallery images={topic.imageUrls} />
+              )}
               {topic.videoUrls && topic.videoUrls.length > 0 && (
                 <VideoSection videos={topic.videoUrls} />
               )}
+              {topic.youtubeUrls && topic.youtubeUrls.length > 0 && (
+                <YouTubeSection videos={topic.youtubeUrls} />
+              )}
             </div>
           )}
-          {/* Videos without content */}
-          {!topic.content && topic.videoUrls && topic.videoUrls.length > 0 && (
+          {/* Media without content */}
+          {!topic.content && (topic.videoUrls?.length || topic.youtubeUrls?.length || topic.clinicalPearls?.length || topic.keyPoints?.length) && (
             <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-white/80 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/30 shadow-sm">
-              <VideoSection videos={topic.videoUrls} />
+              {topic.clinicalPearls && topic.clinicalPearls.length > 0 && (
+                <ClinicalPearlsBox pearls={topic.clinicalPearls} />
+              )}
+              {topic.keyPoints && topic.keyPoints.length > 0 && (
+                <KeyPointsBox points={topic.keyPoints} />
+              )}
+              {topic.videoUrls && topic.videoUrls.length > 0 && (
+                <VideoSection videos={topic.videoUrls} />
+              )}
+              {topic.youtubeUrls && topic.youtubeUrls.length > 0 && (
+                <YouTubeSection videos={topic.youtubeUrls} />
+              )}
             </div>
           )}
 
@@ -450,17 +598,40 @@ export default function TopicPage() {
                         <div className="px-5 sm:px-6 pb-5 sm:pb-6">
                           <div className="border-t border-slate-100 dark:border-slate-700/40 pt-4">
                             <RichContent text={child.content} />
+                            {child.clinicalPearls && child.clinicalPearls.length > 0 && (
+                              <ClinicalPearlsBox pearls={child.clinicalPearls} />
+                            )}
+                            {child.keyPoints && child.keyPoints.length > 0 && (
+                              <KeyPointsBox points={child.keyPoints} />
+                            )}
+                            {child.imageUrls && child.imageUrls.length > 0 && (
+                              <ImageGallery images={child.imageUrls} />
+                            )}
                             {child.videoUrls && child.videoUrls.length > 0 && (
                               <VideoSection videos={child.videoUrls} />
+                            )}
+                            {child.youtubeUrls && child.youtubeUrls.length > 0 && (
+                              <YouTubeSection videos={child.youtubeUrls} />
                             )}
                           </div>
                         </div>
                       )}
-                      {/* Videos without content */}
-                      {!child.content && child.videoUrls && child.videoUrls.length > 0 && (
+                      {/* Media without content */}
+                      {!child.content && (child.videoUrls?.length || child.youtubeUrls?.length || child.clinicalPearls?.length || child.keyPoints?.length) && (
                         <div className="px-5 sm:px-6 pb-5 sm:pb-6">
                           <div className="border-t border-slate-100 dark:border-slate-700/40 pt-4">
-                            <VideoSection videos={child.videoUrls} />
+                            {child.clinicalPearls && child.clinicalPearls.length > 0 && (
+                              <ClinicalPearlsBox pearls={child.clinicalPearls} />
+                            )}
+                            {child.keyPoints && child.keyPoints.length > 0 && (
+                              <KeyPointsBox points={child.keyPoints} />
+                            )}
+                            {child.videoUrls && child.videoUrls.length > 0 && (
+                              <VideoSection videos={child.videoUrls} />
+                            )}
+                            {child.youtubeUrls && child.youtubeUrls.length > 0 && (
+                              <YouTubeSection videos={child.youtubeUrls} />
+                            )}
                           </div>
                         </div>
                       )}
