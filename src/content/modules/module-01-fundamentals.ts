@@ -86,14 +86,17 @@ export const module01: Module = {
           content: 'Los tres conceptos fundamentales de electricidad son esenciales para entender cómo funcionan los equipos de electrodiagnóstico y cómo se generan las señales bioeléctricas.\n\n**Voltaje (V):** Es la diferencia de potencial eléctrico entre dos puntos, medido en voltios. En el cuerpo humano, el potencial de reposo de una membrana axonal es de aproximadamente -70 a -90 mV. Durante un potencial de acción, el voltaje se invierte transitoriamente a +30 mV.\n\n**Corriente (I):** Es el flujo de carga eléctrica a través de un conductor, medido en amperios. En los tejidos biológicos, la corriente es transportada por iones (Na+, K+, Cl-, Ca2+), no por electrones.\n\n**Resistencia (R):** Es la oposición al flujo de corriente, medida en ohmios (Ω). La Ley de Ohm establece la relación: V = I × R.\n\nEn electrodiagnóstico trabajamos con señales extremadamente pequeñas: los SNAP son del orden de 5-80 µV y los CMAP de 2-20 mV. El estimulador eléctrico utiliza corrientes de 0-100 mA con duraciones de 0.05-1.0 ms para despolarizar los nervios.',
           clinicalPearls: [
             'Los SNAP son 1,000 veces más pequeños que los CMAP. Por eso los sensitivos son mucho más susceptibles al ruido y requieren promediación (averaging).',
-            'La impedancia de la piel puede variar de 1 kΩ a >100 kΩ. La preparación adecuada de la piel (abrasión + alcohol) reduce la impedancia a <5 kΩ.',
+            'La impedancia de la piel actúa como una resistencia al paso de la corriente del estimulador. Limpiar la piel con alcohol reduce esta resistencia.'
           ],
           keyPoints: [
-            'Voltaje = diferencia de potencial (V). Corriente = flujo de carga (A). Resistencia = oposición al flujo (Ω).',
-            'Ley de Ohm: V = I × R.',
-            'SNAP: 5-80 µV. CMAP: 2-20 mV.',
-            'En el cuerpo la corriente es iónica (Na+, K+, Cl-, Ca2+).',
+            'Voltaje = diferencia de potencial (presión eléctrica).',
+            'Corriente = flujo de carga (movimiento de iones).',
+            'Resistencia = oposición al flujo (Ley de Ohm: V=IR).',
+            'Señales biológicas: SNAP (μV) << CMAP (mV).'
           ],
+          youtubeUrls: [
+            { title: 'Fundamentos de Electricidad y Bioelectricidad', videoId: 'vjFefDCIje0' }
+          ]
         },
         { id: 'differential-amplification', title: 'Amplificación diferencial', titleEn: 'Differential amplification',
           content: 'El amplificador diferencial es el corazón de todo equipo de electrodiagnóstico. Su función es registrar la diferencia de potencial entre dos electrodos (denominados G1 o activo y G2 o referencia), rechazando simultáneamente cualquier señal que sea idéntica en ambos electrodos (ruido de modo común).\n\n**Principio de funcionamiento:**\nSi G1 registra señal A y G2 registra señal B, el amplificador muestra: A - B. El ruido ambiental (interferencia electromagnética de 60 Hz, equipos eléctricos) llega igualmente a ambos electrodos, por lo que se cancela: Ruido - Ruido = 0.\n\n**Electrodos:**\n• **G1 (Activo):** Se coloca sobre el músculo o nervio de interés (vientre muscular o punto de registro del nervio sensitivo).\n• **G2 (Referencia):** Se coloca en un sitio eléctricamente inactivo (tendón distal, hueso).\n• **Ground (Tierra):** Electrodo de tierra colocado entre el estimulador y el electrodo de registro para drenar corrientes de fuga.\n\nSi la ubicación del electrodo activo es incorrecta (fuera del punto motor), se obtendrá un potencial con deflexión inicial positiva, indicando que la señal se propaga HACIA el electrodo en lugar de originarse debajo de él.',
