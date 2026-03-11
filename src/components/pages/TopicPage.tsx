@@ -42,35 +42,120 @@ function renderInline(text: string, keyPrefix: string): (string | JSX.Element)[]
   });
 }
 
+/* ─── Table Renderer ─── */
+function renderTable(lines: string[], keyBase: string) {
+  const rows = lines
+    .filter(l => l.trim().startsWith('|'))
+    .map(line => {
+      const parts = line.trim().split('|');
+      // Handle the | cell | cell | format
+      if (parts[0] === '') parts.shift();
+      if (parts[parts.length - 1] === '') parts.pop();
+      return parts.map(p => p.trim());
+    });
+
+  if (rows.length < 1) return null;
+
+  // Detect and filter out the separator row (e.g., |---|---|)
+  const dataRows = rows.filter(row => !row.every(cell => /^[\s-:]+$/.test(cell)));
+  if (dataRows.length === 0) return null;
+
+  const header = dataRows[0];
+  const body = dataRows.slice(1);
+
+  return (
+    <div key={keyBase} className="my-5 overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm bg-white dark:bg-slate-900/40">
+      <table className="w-full text-left border-collapse min-w-[450px]">
+        <thead>
+          <tr className="bg-slate-50/80 dark:bg-slate-800/80">
+            {header.map((cell, i) => (
+              <th key={i} className="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700">
+                {renderInline(cell, `${keyBase}-th-${i}`)}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+          {body.map((row, ri) => (
+            <tr key={ri} className="hover:bg-slate-50/30 dark:hover:bg-slate-800/20 transition-colors">
+              {row.map((cell, ci) => (
+                <td key={ci} className="px-4 py-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {renderInline(cell, `${keyBase}-tr-${ri}-td-${ci}`)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 function RichContent({ text, className = '' }: { text: string; className?: string }) {
   const rendered = useMemo(() => {
-    // Split into paragraphs by double newline
-    const paragraphs = text.split(/\n\n+/);
+    // Split into structural blocks by double newline
+    const blocks = text.split(/\n\n+/);
 
-    return paragraphs.map((para, pIdx) => {
-      const trimmed = para.trim();
+    return blocks.map((block, bIdx) => {
+      const trimmed = block.trim();
       if (!trimmed) return null;
 
-      // Check if paragraph is a bullet list (lines starting with • or -)
       const lines = trimmed.split('\n');
-      const isBulletList = lines.every(l => /^[•\-\*]\s/.test(l.trim()));
+      
+      // 1. Check if the block contains a table
+      if (lines.some(l => l.trim().startsWith('|'))) {
+        const parts: JSX.Element[] = [];
+        let currentTableLines: string[] = [];
 
+        lines.forEach((line, lIdx) => {
+          if (line.trim().startsWith('|')) {
+            currentTableLines.push(line);
+          } else {
+            // Render accumulated table lines if we hit a non-table line
+            if (currentTableLines.length > 0) {
+              const table = renderTable(currentTableLines, `b-${bIdx}-t-${lIdx}`);
+              if (table) parts.push(table);
+              currentTableLines = [];
+            }
+            // Render the non-table line as a paragraph or part of one
+            if (line.trim()) {
+              parts.push(
+                <p key={`b-${bIdx}-l-${lIdx}`} className={lIdx > 0 ? 'mt-3' : ''}>
+                  {renderInline(line, `b-${bIdx}-l-${lIdx}`)}
+                </p>
+              );
+            }
+          }
+        });
+
+        // Finalize any remaining table lines
+        if (currentTableLines.length > 0) {
+          const table = renderTable(currentTableLines, `b-${bIdx}-t-end`);
+          if (table) parts.push(table);
+        }
+
+        return <div key={`b-${bIdx}`}>{parts}</div>;
+      }
+
+      // 2. Check if the block is a bullet list
+      const isBulletList = lines.every(l => /^[•\-\*]\s/.test(l.trim()));
       if (isBulletList) {
         return (
-          <ul key={`p-${pIdx}`} className="list-none space-y-1.5 my-3 ml-1">
+          <ul key={`b-${bIdx}`} className="list-none space-y-1.5 my-3 ml-1">
             {lines.map((line, lIdx) => (
-              <li key={`li-${pIdx}-${lIdx}`} className="flex items-start gap-2">
+              <li key={`li-${bIdx}-${lIdx}`} className="flex items-start gap-2">
                 <span className="text-blue-500 dark:text-blue-400 mt-1 flex-shrink-0">•</span>
-                <span>{renderInline(line.replace(/^[•\-\*]\s*/, ''), `li-${pIdx}-${lIdx}`)}</span>
+                <span>{renderInline(line.replace(/^[•\-\*]\s*/, ''), `li-${bIdx}-${lIdx}`)}</span>
               </li>
             ))}
           </ul>
         );
       }
 
+      // 3. Normal paragraph
       return (
-        <p key={`p-${pIdx}`} className={pIdx > 0 ? 'mt-3' : ''}>
-          {renderInline(trimmed, `p-${pIdx}`)}
+        <p key={`p-${bIdx}`} className={bIdx > 0 ? 'mt-3' : ''}>
+          {renderInline(trimmed, `p-${bIdx}`)}
         </p>
       );
     });
