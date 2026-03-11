@@ -1,0 +1,63 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" rx="20" fill="#0A192F"/>
+  
+  <!-- Presynaptic Terminal -->
+  <path d="M100 50 Q 400 30 700 50 L 750 300 Q 400 350 50 300 Z" fill="#1E2D3D" stroke="#4FD1C5" stroke-width="4"/>
+  <text x="400" y="80" text-anchor="middle" fill="#4FD1C5" font-family="Arial" font-size="24" font-weight="bold">Terminal Nervioso (Presináptico)</text>
+  
+  <!-- Synaptic Cleft -->
+  <rect x="50" y="300" width="700" height="50" fill="#2D3748" fill-opacity="0.5"/>
+  
+  <!-- Postsynaptic Membrane (Folds) -->
+  <path d="M50 350 
+           C 100 350, 100 500, 150 500
+           C 200 500, 200 350, 250 350
+           C 300 350, 300 500, 350 500
+           C 400 500, 400 350, 450 350
+           C 500 350, 500 500, 550 500
+           C 600 500, 600 350, 650 350
+           C 700 350, 700 500, 750 500" stroke="#F56565" stroke-width="4" fill="none"/>
+  <text x="400" y="550" text-anchor="middle" fill="#F56565" font-family="Arial" font-size="24" font-weight="bold">Fibra Muscular (Postsináptica)</text>
+  
+  <!-- Step 1: Action Potential -->
+  <path d="M400 20 L 400 100 M 380 40 L 400 60 L 420 40" stroke="#ECC94B" stroke-width="4"/>
+  <text x="430" y="45" fill="#ECC94B" font-family="Arial" font-size="14">1. Potencial de Acción</text>
+  
+  <!-- Step 2: Ca2+ Entry -->
+  <circle cx="150" cy="280" r="10" fill="#63B3ED"/>
+  <path d="M150 240 L 150 320" stroke="#63B3ED" stroke-width="2" stroke-dasharray="4 2"/>
+  <text x="80" y="270" fill="#63B3ED" font-family="Arial" font-size="14">2. Entrada de Ca²⁺</text>
+  
+  <!-- Step 3: Vesicles & SNARE -->
+  <circle cx="300" cy="200" r="15" fill="#4FD1C5" fill-opacity="0.8"/>
+  <circle cx="340" cy="220" r="15" fill="#4FD1C5" fill-opacity="0.8"/>
+  <circle cx="400" cy="280" r="15" fill="#4FD1C5"/>
+  <text x="420" y="220" fill="#4FD1C5" font-family="Arial" font-size="14">3. Complejo SNARE (Fusión)</text>
+  
+  <!-- Step 4: ACh Release -->
+  <circle cx="450" cy="325" r="3" fill="#68D391"/>
+  <circle cx="460" cy="320" r="3" fill="#68D391"/>
+  <circle cx="470" cy="330" r="3" fill="#68D391"/>
+  <text x="500" y="325" fill="#68D391" font-family="Arial" font-size="14">4. Liberación de ACh</text>
+  
+  <!-- Step 5: AChR (Crestas) -->
+  <rect x="235" y="350" width="30" height="10" fill="#F6AD55"/>
+  <text x="200" y="340" fill="#F6AD55" font-family="Arial" font-size="14">5. Receptores (Crestas)</text>
+  
+  <!-- Step 6: Na+ & EPP (Valleys) -->
+  <rect x="335" y="490" width="30" height="10" fill="#FC8181"/>
+  <path d="M350 500 L 350 540" stroke="#FC8181" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="370" y="520" fill="#FC8181" font-family="Arial" font-size="14">6. EPP y Canales Na⁺ (Valles)</text>
+  
+  <!-- Step 7: AChE -->
+  <path d="M550 350 Q 560 370 570 350" stroke="#B794F4" stroke-width="4" fill="none"/>
+  <text x="580" y="375" fill="#B794F4" font-family="Arial" font-size="14">7. Acetilcolinesterasa (AChE)</text>
+  
+  <!-- Arrow Marker -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FC8181" />
+    </marker>
+  </defs>
+</svg>

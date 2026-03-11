@@ -14,34 +14,107 @@ export const module04: Module = {
   topics: [
     { id: 'f-wave', title: 'Onda F',
       children: [
-        { id: 'f-wave-physiology', title: 'Fisiología: conducción antidrómica a la motoneurona', content: 'La onda F es una respuesta tardía causada por la activación antidrómica de las motoneuronas del asta anterior. El estímulo viaja antidrómicamente hasta el soma, donde una pequeña proporción (~1-5%) de motoneuronas se redisparará ortodrómicamente, generando un pequeño potencial muscular tardío. No involucra un arco reflejo sináptico.' },
-        { id: 'f-latencies', title: 'Latencia mínima, media, máxima', content: 'Se registran 10-20 ráfagas y se mide la latencia mínima (la más reproducible), media y máxima. La latencia mínima refleja las fibras más rápidas. Se compara con valores normales ajustados a la estatura y extremidad.' },
-        { id: 'persistence-chronodispersion', title: 'Persistencia y cronodispersión', content: 'Persistencia: porcentaje de estímulos que generan onda F (normal >50% para mediano/ulnar, >30% para tibial/peroneo). Cronodispersión: diferencia entre latencia máxima y mínima (normal <10 ms en MS). Ambas se alteran en neuropatías desmielinizantes.' },
-        { id: 'f-wave-normal-values', title: 'Valores normales por nervio y extremidad' },
-        { id: 'f-wave-utility', title: 'Utilidad clínica: radiculopatías, neuropatías proximales, GBS/CIDP', content: 'La onda F evalúa toda la longitud del nervio (incluyendo segmentos proximales inaccesibles a la neuroconducción convencional). Se prolonga o ausenta en: GBS temprano (hallazgo más precoz), CIDP, radiculopatías, plexopatías. Limitación: poca especificidad topográfica.' },
+        { id: 'f-wave-physiology', title: 'Fisiología de la Onda F', 
+          content: 'La Onda F es una respuesta motora tardía que aparece después del potencial de acción muscular compuesto (PAMC o respuesta M). **No es un verdadero reflejo**, ya que carece de sinapsis en la médula espinal; su circuito es puramente motor.\n\nSe genera cuando un estímulo eléctrico viaja de forma *antidrómica* (hacia la médula espinal) por el axón motor hasta la motoneurona en el asta anterior, provocando una descarga recurrente. Esta motoneurona dispara un nuevo potencial de acción que viaja de forma *ortodrómica* (hacia el músculo) generando un pequeño potencial. Representa la activación de solo un 1% a 5% de las fibras musculares.',
+          keyPoints: [
+            'No es un verdadero reflejo (puramente motor, sin sinapsis).',
+            'Viaje antidrómico → asta anterior → viaje ortodrómico.',
+            'Activa solo 1% a 5% de las fibras musculares.'
+          ]
+        },
+        { id: 'f-wave-technique', title: 'Configuración y Técnica', 
+          content: 'Para obtener una onda F adecuada, el equipo debe configurarse cuidadosamente:\n\n*   **Intensidad del estímulo:** Debe ser **supramáxima**. Asegura que todos los axones motores se despolaricen, evitando reflejos axónicos.\n*   **Posición del estimulador:** El cátodo (electrodo negativo) debe colocarse en posición proximal para evitar un posible bloqueo anódico.\n*   **Frecuencia:** No mayor a 0.5 Hz (1 pulso cada 2 segundos) para evitar dolor y habituación.\n*   **Ganancia:** 200 µV/división (amplitud muy baja).\n*   **Barrido:** 5-10 ms/división.\n*   **Adquisición:** Registrar de 10 a 20 estímulos en cascada.',
+          clinicalPearls: [
+            'Maniobra de Jendrassik: Si las Ondas F no aparecen, pide al paciente que apriete el puño contralateral o los dientes. Esto aumenta la excitabilidad del asta anterior facilitando la respuesta.',
+            'Si la amplitud distal del PAMC es muy baja por daño axonal grave, la ausencia de Ondas F es esperada y no indica bloqueo proximal patológico.'
+          ],
+          keyPoints: [
+            'Estímulo SUPRAMÁXIMO con cátodo proximal.',
+            'Ganancia 200 µV/div; barrido 5-10 ms/div.',
+            'Adquisición de 10-20 estímulos para análisis.'
+          ]
+        },
+        { id: 'f-latencies', title: 'Valores Normales y Parámetros', 
+          content: 'El análisis de la Onda F considera múltiples mediciones a través de los trazos superpuestos:\n\n*   **Latencia mínima:** Es el parámetro MÁS fiable, reflejando las fibras más rápidas. Normal: ≤31-32 ms (MS: mediano/cubital) y ≤56 ms (MI: tibial/peroneo). Debe ajustarse a la altura (Onda F estimada).\n*   **Persistencia:** Porcentaje de estímulos que generan Onda F. Normal: **80% a 100%**. *Nota: en el nervio peroneo puede estar ausente en sanos.*\n*   **Cronodispersión:** Diferencia entre latencia máxima y mínima. Normal: <4 ms en MS, <6 ms en MI.',
+          clinicalPearls: [
+            'Variabilidad: A diferencia de otras respuestas, la Onda F varía en latencia y morfología con CADA estímulo, porque cada choque descarga una población diferente de motoneuronas.'
+          ]
+        },
+        { id: 'f-wave-utility', title: 'Utilidad Clínica', 
+          content: 'Es un marcador altamente sensible para detectar **polirradiculoneuropatías desmielinizantes agudas y crónicas** (SGB, CIDP).\n\nEn el Síndrome de Guillain-Barré, las ondas F prolongadas o ausentes suelen ser el hallazgo anormal más temprano. También ayuda a evaluar radiculopatías (C8-T1 o L5-S1), aunque tiene limitación topográfica ya que evalúa toda la longitud del nervio.',
+          keyPoints: [
+            'Marcador muy sensible para SGB y CIDP temprano.',
+            'Evalúa segmentos proximales inaccesibles rutinariamente.'
+          ]
+        },
       ]
     },
     { id: 'h-reflex', title: 'Reflejo H (Hoffmann)',
       children: [
-        { id: 'h-reflex-physiology', title: 'Fisiología: estímulo submáximo, arco reflejo monosináptico', content: 'El reflejo H es el equivalente eléctrico del reflejo miotático (de estiramiento). Un estímulo submáximo activa selectivamente las fibras aferentes Ia (de bajo umbral), que hacen sinapsis en la médula con las motoneuronas alfa, generando una respuesta refleja. A diferencia de la onda F, SÍ involucra una sinapsis (arco reflejo monosináptico).' },
-        { id: 'tibial-soleus', title: 'Nervio tibial → sóleo (reflejo H clásico)', content: 'Se estimula el nervio tibial en el hueco poplíteo a intensidades submáximas y se registra en el sóleo/gastrocnemio. Latencia normal: <34 ms (varía con estatura). El reflejo H desaparece con estimulación supramáxima (colisión antidrómica). Comparación lado a lado: diferencia >1.5 ms es significativa.' },
-        { id: 'side-comparison', title: 'Comparación lado a lado' },
-        { id: 'fcr-h-reflex', title: 'Reflejo H del flexor carpi radialis', content: 'Alternativa en el MS. Estimulación del nervio mediano en el codo, registro en FCR. Útil para evaluar radiculopatía C6-C7.' },
-        { id: 'h-reflex-utility', title: 'Utilidad clínica: radiculopatía S1, polineuropatías', content: 'El reflejo H tibial/sóleo es el estudio más sensible para radiculopatía S1 (más que la EMG de aguja en etapas tempranas). Está ausente bilateralmente en polineuropatías (hallazgo precoz). Diferencia lado a lado >1.5 ms sugiere radiculopatía S1 unilateral.' },
+        { id: 'h-reflex-physiology', title: 'Fisiología', 
+          content: 'A diferencia de la Onda F, el Reflejo H **ES un verdadero reflejo espinal monosináptico**. Es el equivalente eléctrico del reflejo miotático (reflejo aquíleo).\n\nLa vía aferente (sensitiva) está mediada por las fibras gruesas mielinizadas Ia provenientes de los husos musculares, que tienen bajo umbral. Hacen sinapsis en la médula y la respuesta eferente baja por las motoneuronas alfa.',
+          keyPoints: [
+            'Verdadero reflejo monosináptico.',
+            'Vía aferente sensitiva Ia → sinapsis → vía eferente motora alfa.',
+            'Equivalente eléctrico del reflejo aquíleo.'
+          ]
+        },
+        { id: 'h-reflex-technique-collision', title: 'Técnica y Fenómeno de Colisión', 
+          content: 'Técnica de obtención:\n*   **Intensidad:** Estímulo **submáximo**.\n*   **Pulso:** Larga duración (1 ms / 1000 µs) para activar selectivamente las fibras Ia.\n*   **Frecuencia:** <0.5 Hz.\n*   **Registro clásico:** Estímulo en nervio tibial (hueco poplíteo), registro en sóleo/gastrocnemio.\n\n**Fenómeno de Colisión:**\nA intensidades bajas, aparece la respuesta H sin respuesta M. Al subir el estímulo progresivamente, aparece la onda M. Si la intensidad es *supramáxima*, la onda M crece y **el Reflejo H disminuye hasta desaparecer** por colisión antidrómica de los potenciales motores.',
+          clinicalPearls: [
+            'Estabilidad: A diferencia de la Onda F, el Reflejo H tiene latencia y forma (usualmente trifásica) muy constantes ante un estímulo fijo.'
+          ],
+          keyPoints: [
+            'Estímulo SUBMÁXIMO con pulso largo (1 ms).',
+            'Sube el estímulo → H aparece. Sube a supramáximo → H desaparece por colisión.'
+          ]
+        },
+        { id: 'h-reflex-values-utilty', title: 'Valores Normales y Utilidad', 
+          content: 'Valores Normales:\n*   **Latencia:** Típicamente entre 25-34 ms (evaluado con nomogramas por estatura).\n*   **Diferencia interlado:** Cualquier diferencia **>1.5 ms** (lado enfermo vs. sano) es patológica.\n*   **Relación H/M:** Amplitud normal ≤50%.\n\nUtilidad:\n*   Es la prueba más sensible y específica para **radiculopatía S1**.\n*   Detecta polineuropatías tempranas y plexopatías lumbosacras.\n*   Ratio H/M muy elevado sugiere hiperexcitabilidad de motoneurona superior.',
+          clinicalPearls: [
+            'La ausencia bilateral del Reflejo H en mayores de 60 años puede ser un hallazgo fisiológico correlacionado con la pérdida natural de los reflejos aquíleos.'
+          ],
+          keyPoints: [
+            'Diferencia de latencia H >1.5 ms interlado = Patológico.',
+            'Prueba de oro para Radiculopatía S1.',
+            'Relación H/M alta → disfunción de vía piramidal.'
+          ]
+        },
       ]
     },
     { id: 'axon-reflex', title: 'Reflejo Axónico (Onda A)',
       children: [
-        { id: 'a-wave-pathophysiology', title: 'Fisiopatología', content: 'La onda A es una respuesta tardía con latencia fija y morfología constante. Se produce por activación antidrómica de una rama axonal colateral (sprout) que re-conduce ortodrómicamente por otra rama. Indica reinervación colateral (hallazgo de cronicidad).' },
-        { id: 'a-vs-f-wave', title: 'Diferenciación con la onda F', content: 'La onda A tiene latencia y morfología constantes (a diferencia de la onda F que varía). Aparece con estimulación submáxima y desaparece con supramáxima. Indica patología (reinervación) mientras que la onda F es fisiológica.' },
+        { id: 'a-wave-pathophysiology', title: 'Fisiopatología', 
+          content: 'La Onda A es un potencial motor tardío que se visualiza durante la obtención de las Ondas F.\n\nUn axón motor se ramifica típicamente de forma proximal. Cuando un estímulo submáximo viaja de forma antidrómica, al llegar a una ramificación, el impulso da la vuelta ("U-turn") y desciende ortodrómico por otra rama intacta, contrayendo el músculo.',
+          clinicalPearls: [
+            'Inmutabilidad: A diferencia de la Onda F, la Onda A cae EXACTAMENTE en la misma latencia y tiene la MISMA morfología en todos los trazos sucesivos.'
+          ]
+        },
+        { id: 'a-vs-f-wave', title: 'Identificación y Utilidad Clínica', 
+          content: 'Aparece usualmente *entre* la respuesta M y la Onda F. \n\n**Prueba de colisión:** Si aparece de forma constante subiendo el estímulo, hay que subirlo a **supramáximo**. Si desaparece, se confirma que es un reflejo axónico (porque al haber estímulo máximo, todas las ramas discurren antidrómicamente, induciendo colisión).\n\n**Utilidad:**\n*   Signo clásico de **reinervación crónica** por brotes colaterales tras pérdida axonal.\n*   Se observa tempranamente en el Guillain-Barré por transmisión "efáptica" (salto de corriente) en sitios de desmielinización focal.'
+        },
       ]
     },
     { id: 'blink-reflex', title: 'Reflejo de Parpadeo (Blink Reflex)',
       children: [
-        { id: 'trigeminal-facial-pathway', title: 'Vía trigémino-facial', content: 'Se estimula el nervio supraorbitario (rama del trigémino, V1) y se registra en el orbicular de los ojos bilateralmente. El impulso viaja por: rama sensitiva del trigémino → núcleo espinal del trigémino → conexiones pontinas y bulbares → núcleo motor del facial bilateral → músculo orbicular.' },
-        { id: 'r1-r2-responses', title: 'Respuestas R1, R2 ipsilateral, R2 contralateral', content: 'R1: respuesta ipsilateral temprana (~10 ms), oligosináptica (pontina). Es la respuesta más localizable. R2 ipsilateral (~30 ms) y R2 contralateral (~32 ms): respuestas tardías polisinápticas (bulbares). El análisis de los patrones R1/R2 permite localizar la lesión a nivel del trigémino aferente, pontino, bulbar o facial eferente.' },
-        { id: 'blink-patterns', title: 'Patrones patológicos y correlación lesional', content: 'Lesión del trigémino: R1, R2 ipsi y R2 contra ausentes/retardados con estimulación del lado afectado. Lesión del facial: R1 y R2 ipsi ausentes, R2 contra normal (estimulando el lado sano). Lesión pontina: R1 afectado. Lesión bulbar: R2 afectados bilateralmente.' },
-        { id: 'blink-utility', title: 'Utilidad en neuropatía trigeminal y parálisis facial' },
+        { id: 'trigeminal-facial-pathway', title: 'Vía Trigémino-Facial', 
+          content: 'El Blink Reflex es el análogo electrofisiológico del reflejo corneal. Evalúa la integridad de los pares craneales V y VII, y del tronco cerebral (puente y bulbo).\n\n*   **Vía aferente:** Nervio supraorbitario (V1 - Trigémino).\n*   **Vía eferente:** Nervio facial (VII) bilateral.\n\nComponentes:\n*   **R1 (Temprana ipsilateral):** Vía bisináptica a la protuberancia media. Reacción solo del lado estimulado.\n*   **R2 (Tardía bilateral):** Vía polisináptica que desciende hasta el núcleo espinal del V en el bulbo y cruza a la vía motora bilateral.'
+        },
+        { id: 'blink-technique', title: 'Técnica de Registro', 
+          content: 'Técnica de 2 canales:\n1.  **Electrodos G1 (Activos):** Orbicular de los ojos, bajo el ojo.\n2.  **Electrodos G2 (Ref):** Canto externo del ojo.\n3.  **Estímulo:** Nervio supraorbitario.\n\n*   Pulso de estimulación: de muy baja intensidad pero suficiente, 0.1 ms.\n*   Sensibilidad: 100-200 µV/div.\n*   Barrido: 5-10 ms/div.\n\nSe superponen de 4 a 6 trazos separados por varios segundos.',
+          clinicalPearls: [
+            'Nunca usar choque automático repetitivo: la respuesta R2 tiende a desaparecer velozmente por habituación.',
+            'Biofeedback: Si el paciente está tenso y genera artefacto basal, subir el altavoz del equipo para que escuche su tensión ayuda a relajar los músculos faciales inmediatamente.',
+            'Sincinesias: En sospecha de reinervación aberrante post-parálisis facial, coloca electrodos en el músculo mentoniano. Normalmente no se contrae al parpadear; si muestra R1/R2, hay reinervación aberrante.'
+          ]
+        },
+        { id: 'blink-patterns', title: 'Patrones Patológicos y Correlación Lesional', 
+          content: 'Valores normales: R1 ≤13 ms, R2 ipsi ≤41 ms, R2 contra ≤44 ms.\n\nPatrones lesionales:\n1.  **Lesión del V par (Trigémino):** Al estimular el lado afectado, TODOS se afectan (R1, R2 ipsi y R2 contra). Lado sano normal.\n2.  **Lesión del VII par (Facial):** Ej. Parálisis de Bell. Al estimular el lado malo: R1 ausente, R2 ipsi ausente, R2 contra normal. Al estimular el lado sano: R2 hacia la cara paralizada anormal.\n3.  **Lesión pontina focal:** Afección selectiva de R1.\n4.  **Lesión bulbar:** R2 bilaterales prolongadas, R1 intacta.',
+          keyPoints: [
+            'V par: Aferente "de entrada", si falla, nada sale al estimular el lado malo.',
+            'VII par: Eferente "de salida", falla la contracción del lado dañado independiente de dónde se estimule.'
+          ]
+        },
       ]
     },
   ]
